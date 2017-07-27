@@ -3,6 +3,7 @@
 See demo.yml for configuring the demo
 """
 
+
 import argparse
 import subprocess
 import textwrap
@@ -16,7 +17,14 @@ import tsrc.gitlab
 import tsrc.cli.push
 
 
-TSRC_URL = "https://tanker.io/open-source/tsrc"
+TSRC_URL = "https://github.io/TankerApp/tsrc"
+
+
+def fake_type(text):
+    for char in text:
+        time.sleep(0.1)
+        print(char, flush=True, end="")
+    print(flush=True)
 
 
 class DemoMaker():
@@ -49,8 +57,9 @@ class DemoMaker():
         time.sleep(3)
 
     def step(self, *args, cwd):
-        ui.info(ui.green, "$", ui.reset, ui.bold, *args, end="\n\n")
-        time.sleep(5)
+        ui.info(ui.green, "$ ", end="")
+        fake_type(" ".join(args))
+        time.sleep(1)
         subprocess.run(args, cwd=cwd)
 
     def clean(self):

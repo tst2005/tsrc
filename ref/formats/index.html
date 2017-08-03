@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Configuration file formats - Tanker documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Configuration file formats";
+    var mkdocs_page_input_path = "ref/formats.md";
+    var mkdocs_page_url = "/ref/formats/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tanker documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/basics/">Basic usage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/merge_requests/">Handling GitLab merge requests</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../changelog/">Changelog</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cli/">Comand line reference</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Configuration file formats</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#configuration_file_formats">Configuration file formats</a></li>
+                
+                    <li><a class="toctree-l4" href="#manifest_format">Manifest format</a></li>
+                
+                    <li><a class="toctree-l4" href="#tsrcyml_format">tsrc.yml format</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contrib/bugs/">Reporting bugs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contrib/features/">Adding new features</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Tanker documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference &raquo;</li>
+        
+      
+    
+    <li>Configuration file formats</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="configuration_file_formats">Configuration file formats<a class="headerlink" href="#configuration_file_formats" title="Permanent link">&para;</a></h1>
+<p>Unless otherwise noted, all configuration files use <a href="http://www.yaml.org/">YAML</a>
+syntax</p>
+<h2 id="manifest_format">Manifest format<a class="headerlink" href="#manifest_format" title="Permanent link">&para;</a></h2>
+<p>The manifest is always parsed as a dictionary .</p>
+<h3 id="top_fields">Top fields<a class="headerlink" href="#top_fields" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code>repos</code> (required): list of repos to clone</p>
+</li>
+<li>
+<p><code>gitlab.url</code> (optional): HTTP URL of the GitLab instance</p>
+</li>
+</ul>
+<h3 id="repos">repos<a class="headerlink" href="#repos" title="Permanent link">&para;</a></h3>
+<p>Each repository is also a dictionary, containing:</p>
+<ul>
+<li><code>src</code> (required): relative path of the repository in the workspace</li>
+<li><code>url</code> (required): URL to use when cloning the repository (usually using ssh)</li>
+</ul>
+<p>In addition, the dictionary can contain a list of files to copy:</p>
+<ul>
+<li><code>copyfiles</code>: a list of dictionary with <code>src</code> and <code>dest</code> keys, like so:</li>
+</ul>
+<pre><code>repo:
+  src: foo
+  url: gitlab:proj1/foo
+  copyfiles:
+    - src: foo.txt
+      dest: top.txt
+</code></pre>
+
+<p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>, <code>foo.txt</code>
+will be copied from <code>proj1/foo/foo.txt</code> to <code>&lt;workspace&gt;/top.txt</code>.</p>
+<h2 id="tsrcyml_format">tsrc.yml format<a class="headerlink" href="#tsrcyml_format" title="Permanent link">&para;</a></h2>
+<p><code>tsrc.yml</code> must be written in <code>XDG_CONFIG_HOME</code> (or <code>~/.config/</code>).</p>
+<p>We use GitLab authentication with token, like so:</p>
+<pre><code>auth:
+  gitlab:
+    token: &lt;your token&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../contrib/bugs/" class="btn btn-neutral float-right" title="Reporting bugs">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cli/" class="btn btn-neutral" title="Comand line reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../cli/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../contrib/bugs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

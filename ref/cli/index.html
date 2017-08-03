@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Comand line reference - Tanker documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Comand line reference";
+    var mkdocs_page_input_path = "ref/cli.md";
+    var mkdocs_page_url = "/ref/cli/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tanker documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/basics/">Basic usage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guide/merge_requests/">Handling GitLab merge requests</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../changelog/">Changelog</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Comand line reference</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#command_line_reference">Command line reference</a></li>
+                
+                    <li><a class="toctree-l4" href="#important_note">Important note</a></li>
+                
+                    <li><a class="toctree-l4" href="#general">General</a></li>
+                
+                    <li><a class="toctree-l4" href="#available_commands">Available commands</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../formats/">Configuration file formats</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contrib/bugs/">Reporting bugs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contrib/features/">Adding new features</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Tanker documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference &raquo;</li>
+        
+      
+    
+    <li>Comand line reference</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="command_line_reference">Command line reference<a class="headerlink" href="#command_line_reference" title="Permanent link">&para;</a></h1>
+<h2 id="important_note">Important note<a class="headerlink" href="#important_note" title="Permanent link">&para;</a></h2>
+<p>We use the <a href="https://docs.python.org/3/library/argparse.html">argparse</a> library to
+parse command line arguments, so the <code>--help</code> messages are always up-to-date,
+probably more so that this documentation :)</p>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<p><code>tsrc</code> uses the same "subcommand" pattern as git does.</p>
+<p>Options common to all commands are placed right before the command name.</p>
+<p>Options after the command name only apply to this command.</p>
+<p>For instance:</p>
+<pre><code class="console">$ tsrc --verbose sync
+$ tsrc init &lt;manifest url&gt;
+</code></pre>
+
+<h2 id="available_commands">Available commands<a class="headerlink" href="#available_commands" title="Permanent link">&para;</a></h2>
+<h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<p><code>tsrc init &lt;manifest url&gt;</code></p>
+<p>Initialized a new workspace.</p>
+<p>Arguments:</p>
+<ul>
+<li><code>&lt;manifest url&gt;</code> (required)</li>
+</ul>
+<h3 id="foreach">foreach<a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h3>
+<p>Two forms:</p>
+<ul>
+<li>
+<p><code>tsrc foreach -- command --opt1 arg1</code></p>
+<p>Runs <code>command --opt1 arg1</code> in every repository, and report failures
+at the end.</p>
+<p>Note the <code>--</code> token to separate options for <code>command</code> from options for
+<code>tsrc</code></p>
+</li>
+<li>
+<p><code>tsrc foreach -c 'command --opt1 arg1'</code></p>
+<p>Ditto, but uses a shell. (<code>/bin/sh</code> on Linux or macOS, <code>cmd.exe</code> on Windows)</p>
+</li>
+</ul>
+<h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
+<p><code>tsrc log --from FROM [--to TO]</code></p>
+<p>Display a summary of all changes since a given tag.</p>
+<p>Arguments:</p>
+<ul>
+<li><code>--from</code> (required: start tag)</li>
+<li><code>--to</code> (optional: end ref, defaults to master)</li>
+</ul>
+<p>Note that if no changes are found, the repository will not be displayed at
+all.</p>
+<h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h3>
+<h4 id="create_a_merge_request">Create a merge request<a class="headerlink" href="#create_a_merge_request" title="Permanent link">&para;</a></h4>
+<p><code>tsrc push [--assignee ASSIGNEE]</code></p>
+<p>You should run this from a repository with the correct branch checked out.</p>
+<p>(The command will fail if you run this while on the <code>master</code> branch our in
+"detached HEAD" mode)</p>
+<p>Arguments:</p>
+<ul>
+<li><code>--assignee (optional)</code>: should match the name of an active GitLab user to be
+  assigned to the pull request</li>
+</ul>
+<h4 id="accept_a_merge_request">Accept a merge request<a class="headerlink" href="#accept_a_merge_request" title="Permanent link">&para;</a></h4>
+<p><code>tsrc push --accept</code></p>
+<p>Tell GitLab to merge the merge request after the CI has passed.</p>
+<p>Note that the source branch will get automatically removed</p>
+<p>(Which should not matter since all the information about the source branch will
+be found in the merge commit)</p>
+<h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h3>
+<p><code>tsrc status</code></p>
+<p>Displays a summary of the status of your workspace:</p>
+<ul>
+<li>Shows dirty repos</li>
+<li>Shows repos not on the expected branch</li>
+</ul>
+<h3 id="sync">sync<a class="headerlink" href="#sync" title="Permanent link">&para;</a></h3>
+<p><code>tsrc sync</code></p>
+<p>Updates all the repositories and shows a summary at the end.</p>
+<h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
+<p><code>tsrc version</code></p>
+<p>Displays <code>tsrc</code> version number, along additional data if run from a git clone.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../formats/" class="btn btn-neutral float-right" title="Configuration file formats">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../faq/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../formats/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -74,6 +74,10 @@
             
                 <li class="toctree-l3"><a href="#handling_gitlab_merge_requests">Handling GitLab merge requests</a></li>
                 
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating_and_accepting_merge_requests">Creating and accepting merge requests</a></li>
+                
             
             </ul>
         
@@ -163,6 +167,7 @@
             <div class="section">
               
                 <h1 id="handling_gitlab_merge_requests">Handling GitLab merge requests<a class="headerlink" href="#handling_gitlab_merge_requests" title="Permanent link">&para;</a></h1>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>The first step is to log in to GitLab and get your personal access token.</p>
 <p>Then, write a file in <code>~/.config/tsrc.yml</code> containing the token:</p>
 <pre><code class="yaml">auth:
@@ -182,6 +187,17 @@
 
 repos:
  - ...
+</code></pre>
+
+<h2 id="creating_and_accepting_merge_requests">Creating and accepting merge requests<a class="headerlink" href="#creating_and_accepting_merge_requests" title="Permanent link">&para;</a></h2>
+<p>Here's how you can create and assign a merge request</p>
+<pre><code class="bash"># start working on your branch
+$ tsrc push [--assignee ASSIGNEE]
+</code></pre>
+
+<p>When the review is done, you can accept it and let GitLab merge the branch once
+the CI pipeline passes with the following command:</p>
+<pre><code class="bash">$ tsrc push --accept
 </code></pre>
               
             </div>

@@ -211,8 +211,12 @@ all.</p>
 <p>You should run this from a repository with the correct branch checked out.</p>
 <p>(The command will fail if you run this while on the <code>master</code> branch our in
 "detached HEAD" mode)</p>
-<p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user</p>
+<p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user.</p>
+<p>The merge request will get created if no other opened merge request with the same
+branch exists. Otherwise, the existing merge request will be updated.</p>
 </dd>
+<dt>tsrc push [--ready|--wip]</dt>
+<dd>Toggle the <em>WIP</em> ("Work In Progress") prefix for the merge request.</dd>
 <dt>tsrc push --accept</dt>
 <dd>
 <p>Tell GitLab to merge the merge request after the CI has passed.</p>

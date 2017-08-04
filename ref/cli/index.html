@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -60,13 +61,6 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../guide/installation/">Installation</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
         <a class="" href="../../guide/basics/">Basic usage</a>
         
     </li>
@@ -80,20 +74,6 @@
 
         
     </ul>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../changelog/">Changelog</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../faq/">FAQ</a>
-        
-    </li>
 <li>
           
             <li>
@@ -113,7 +93,7 @@
                 
                     <li><a class="toctree-l4" href="#general">General</a></li>
                 
-                    <li><a class="toctree-l4" href="#available_commands">Available commands</a></li>
+                    <li><a class="toctree-l4" href="#usage">Usage</a></li>
                 
             
             </ul>
@@ -132,25 +112,24 @@
 <li>
           
             <li>
-    <ul class="subnav">
-    <li><span>Contributing</span></li>
-
-        
-            
     <li class="toctree-l1 ">
-        <a class="" href="../../contrib/bugs/">Reporting bugs</a>
+        <a class="" href="../../contrib/">Contributing</a>
         
     </li>
-
-        
-            
+<li>
+          
+            <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../contrib/features/">Adding new features</a>
+        <a class="" href="../../faq/">FAQ</a>
         
     </li>
-
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../changelog/">Changelog</a>
         
-    </ul>
+    </li>
 <li>
           
         </ul>
@@ -200,72 +179,60 @@ probably more so that this documentation :)</p>
 <p>Options after the command name only apply to this command.</p>
 <p>For instance:</p>
 <pre><code class="console">$ tsrc --verbose sync
-$ tsrc init &lt;manifest url&gt;
+$ tsrc init MANIFEST_URL
 </code></pre>
 
-<h2 id="available_commands">Available commands<a class="headerlink" href="#available_commands" title="Permanent link">&para;</a></h2>
-<h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
-<p><code>tsrc init &lt;manifest url&gt;</code></p>
-<p>Initialized a new workspace.</p>
-<p>Arguments:</p>
-<ul>
-<li><code>&lt;manifest url&gt;</code> (required)</li>
-</ul>
-<h3 id="foreach">foreach<a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h3>
-<p>Two forms:</p>
-<ul>
-<li>
-<p><code>tsrc foreach -- command --opt1 arg1</code></p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>tsrc init MANIFEST_URL</dt></dt>
+<dd>
+<p>Initializes a new workspace.</p>
+<p>MANIFEST_URL should be a git URL containing a valid
+manifest.ym` file.</p>
+</dd>
+<dt>tsrc foreach -- command --opt1 arg1</dt>
+<dd>
 <p>Runs <code>command --opt1 arg1</code> in every repository, and report failures
 at the end.</p>
 <p>Note the <code>--</code> token to separate options for <code>command</code> from options for
 <code>tsrc</code></p>
-</li>
-<li>
-<p><code>tsrc foreach -c 'command --opt1 arg1'</code></p>
-<p>Ditto, but uses a shell. (<code>/bin/sh</code> on Linux or macOS, <code>cmd.exe</code> on Windows)</p>
-</li>
-</ul>
-<h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
-<p><code>tsrc log --from FROM [--to TO]</code></p>
-<p>Display a summary of all changes since a given tag.</p>
-<p>Arguments:</p>
-<ul>
-<li><code>--from</code> (required: start tag)</li>
-<li><code>--to</code> (optional: end ref, defaults to master)</li>
-</ul>
+</dd>
+<dt>tsrc foreach -c 'command --opt1 arg1'</dt>
+<dd>Ditto, but uses a shell. (<code>/bin/sh</code> on Linux or macOS, <code>cmd.exe</code> on Windows)</dd>
+<dt>tsrc log --from FROM [--to TO]</dt>
+<dd>
+<p>Display a summary of all changes since <code>FROM</code> (should be a tag),
+to <code>TO</code> (defaulting to <code>master</code>)</p>
 <p>Note that if no changes are found, the repository will not be displayed at
 all.</p>
-<h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h3>
-<h4 id="create_a_merge_request">Create a merge request<a class="headerlink" href="#create_a_merge_request" title="Permanent link">&para;</a></h4>
-<p><code>tsrc push [--assignee ASSIGNEE]</code></p>
+</dd>
+<dt>tsrc push [--assignee ASSIGNEE]</dt>
+<dd>
 <p>You should run this from a repository with the correct branch checked out.</p>
 <p>(The command will fail if you run this while on the <code>master</code> branch our in
 "detached HEAD" mode)</p>
-<p>Arguments:</p>
-<ul>
-<li><code>--assignee (optional)</code>: should match the name of an active GitLab user to be
-  assigned to the pull request</li>
-</ul>
-<h4 id="accept_a_merge_request">Accept a merge request<a class="headerlink" href="#accept_a_merge_request" title="Permanent link">&para;</a></h4>
-<p><code>tsrc push --accept</code></p>
+<p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user</p>
+</dd>
+<dt>tsrc push --accept</dt>
+<dd>
 <p>Tell GitLab to merge the merge request after the CI has passed.</p>
-<p>Note that the source branch will get automatically removed</p>
-<p>(Which should not matter since all the information about the source branch will
+<p>Note that the source branch will get automatically removed. (Which should
+not matter since all the information about the source branch will
 be found in the merge commit)</p>
-<h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h3>
-<p><code>tsrc status</code></p>
+</dd>
+<dt>tsrc status</dt>
+<dd>
 <p>Displays a summary of the status of your workspace:</p>
 <ul>
 <li>Shows dirty repos</li>
 <li>Shows repos not on the expected branch</li>
 </ul>
-<h3 id="sync">sync<a class="headerlink" href="#sync" title="Permanent link">&para;</a></h3>
-<p><code>tsrc sync</code></p>
-<p>Updates all the repositories and shows a summary at the end.</p>
-<h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
-<p><code>tsrc version</code></p>
-<p>Displays <code>tsrc</code> version number, along additional data if run from a git clone.</p>
+</dd>
+<dt>tsrc sync</dt>
+<dd>Updates all the repositories and shows a summary at the end.</dd>
+<dt>tsrc version</dt>
+<dd>Displays <code>tsrc</code> version number, along additional data if run from a git clone.</dd>
+</dl>
               
             </div>
           </div>
@@ -276,7 +243,7 @@ be found in the merge commit)</p>
         <a href="../formats/" class="btn btn-neutral float-right" title="Configuration file formats">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../faq/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../guide/merge_requests/" class="btn btn-neutral" title="Handling GitLab merge requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -302,7 +269,7 @@ be found in the merge commit)</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../guide/merge_requests/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../formats/" style="color: #fcfcfc">Next &raquo;</a></span>

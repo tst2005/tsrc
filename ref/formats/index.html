@@ -185,21 +185,25 @@ syntax</p>
 <ul>
 <li><code>src</code> (required): relative path of the repository in the workspace</li>
 <li><code>url</code> (required): URL to use when cloning the repository (usually using ssh)</li>
+<li><code>branch</code> (optional): The branch to use when cloning the repository (defaults
+  to <code>master</code>)</li>
 </ul>
 <p>In addition, the dictionary can contain a list of files to copy:</p>
 <ul>
 <li><code>copyfiles</code>: a list of dictionary with <code>src</code> and <code>dest</code> keys, like so:</li>
 </ul>
-<pre><code>repo:
+<pre><code>repos:
   src: foo
   url: gitlab:proj1/foo
+  branch: develop
   copyfiles:
     - src: foo.txt
       dest: top.txt
 </code></pre>
 
-<p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>, <code>foo.txt</code>
-will be copied from <code>proj1/foo/foo.txt</code> to <code>&lt;workspace&gt;/top.txt</code>.</p>
+<p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>,
+(using <code>develop</code> branch), <code>foo.txt</code> will be copied from <code>proj1/foo/foo.txt</code> to
+<code>&lt;workspace&gt;/top.txt</code>.</p>
 <h2 id="tsrcyml_format">tsrc.yml format<a class="headerlink" href="#tsrcyml_format" title="Permanent link">&para;</a></h2>
 <p><code>tsrc.yml</code> must be written in <code>XDG_CONFIG_HOME</code> (or <code>~/.config/</code>).</p>
 <p>We use GitLab authentication with token, like so:</p>

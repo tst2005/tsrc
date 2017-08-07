@@ -107,13 +107,13 @@
         }, 
         {
             "location": "/ref/formats/", 
-            "text": "Configuration file formats\n\n\nUnless otherwise noted, all configuration files use \nYAML\n\nsyntax\n\n\nManifest format\n\n\nThe manifest is always parsed as a dictionary .\n\n\nTop fields\n\n\n\n\n\n\nrepos\n (required): list of repos to clone\n\n\n\n\n\n\ngitlab.url\n (optional): HTTP URL of the GitLab instance\n\n\n\n\n\n\nrepos\n\n\nEach repository is also a dictionary, containing:\n\n\n\n\nsrc\n (required): relative path of the repository in the workspace\n\n\nurl\n (required): URL to use when cloning the repository (usually using ssh)\n\n\nbranch\n (optional): The branch to use when cloning the repository (defaults\n  to \nmaster\n)\n\n\n\n\nIn addition, the dictionary can contain a list of files to copy:\n\n\n\n\ncopyfiles\n: a list of dictionary with \nsrc\n and \ndest\n keys, like so:\n\n\n\n\nrepos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt\n\n\n\n\nIn this case, after \nproj1/foo\n has been cloned in \nworkspace\n/foo\n,\n(using \ndevelop\n branch), \nfoo.txt\n will be copied from \nproj1/foo/foo.txt\n to\n\nworkspace\n/top.txt\n.\n\n\ntsrc.yml format\n\n\ntsrc.yml\n must be written in \nXDG_CONFIG_HOME\n (or \n~/.config/\n).\n\n\nWe use GitLab authentication with token, like so:\n\n\nauth:\n  gitlab:\n    token: \nyour token", 
-            "title": "Configuration file formats"
+            "text": "Configuration files formats\n\n\nUnless otherwise noted, all configuration files use \nYAML\n\nsyntax\n\n\nManifest format\n\n\nThe manifest is always parsed as a dictionary .\n\n\nTop fields\n\n\n\n\n\n\nrepos\n (required): list of repos to clone\n\n\n\n\n\n\ngitlab.url\n (optional): HTTP URL of the GitLab instance\n\n\n\n\n\n\nrepos\n\n\nEach repository is also a dictionary, containing:\n\n\n\n\nsrc\n (required): relative path of the repository in the workspace\n\n\nurl\n (required): URL to use when cloning the repository (usually using ssh)\n\n\nbranch\n (optional): The branch to use when cloning the repository (defaults\n  to \nmaster\n)\n\n\n\n\nref\n (optional): Can be a tag like \nv0.1\n or a commit like \n0ab12ef\n.\n   If \nref\n is set:\n\n\n\n\nWhen running \ntsrc init\n: Project will be cloned with the given branch, and then reset to\n    the given ref.\n\n\nWhen running \ntsrc sync\n: If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.\n\n\n\n\n\n\n\n\ncopyfiles\n: (optional): A list of dictionaries with \nsrc\n and \ndest\n keys, like so:\n\n\n\n\n\n\nrepos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt\n\n\n\n\nIn this case, after \nproj1/foo\n has been cloned in \nworkspace\n/foo\n,\n(using \ndevelop\n branch), \nfoo.txt\n will be copied from \nproj1/foo/foo.txt\n to\n\nworkspace\n/top.txt\n.\n\n\ntsrc.yml format\n\n\ntsrc.yml\n must be written in \nXDG_CONFIG_HOME\n (or \n~/.config/\n).\n\n\nWe use GitLab authentication with token, like so:\n\n\nauth:\n  gitlab:\n    token: \nyour token", 
+            "title": "Configuration files formats"
         }, 
         {
-            "location": "/ref/formats/#configuration_file_formats", 
+            "location": "/ref/formats/#configuration_files_formats", 
             "text": "Unless otherwise noted, all configuration files use  YAML \nsyntax", 
-            "title": "Configuration file formats"
+            "title": "Configuration files formats"
         }, 
         {
             "location": "/ref/formats/#manifest_format", 
@@ -127,7 +127,7 @@
         }, 
         {
             "location": "/ref/formats/#repos", 
-            "text": "Each repository is also a dictionary, containing:   src  (required): relative path of the repository in the workspace  url  (required): URL to use when cloning the repository (usually using ssh)  branch  (optional): The branch to use when cloning the repository (defaults\n  to  master )   In addition, the dictionary can contain a list of files to copy:   copyfiles : a list of dictionary with  src  and  dest  keys, like so:   repos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt  In this case, after  proj1/foo  has been cloned in  workspace /foo ,\n(using  develop  branch),  foo.txt  will be copied from  proj1/foo/foo.txt  to workspace /top.txt .", 
+            "text": "Each repository is also a dictionary, containing:   src  (required): relative path of the repository in the workspace  url  (required): URL to use when cloning the repository (usually using ssh)  branch  (optional): The branch to use when cloning the repository (defaults\n  to  master )   ref  (optional): Can be a tag like  v0.1  or a commit like  0ab12ef .\n   If  ref  is set:   When running  tsrc init : Project will be cloned with the given branch, and then reset to\n    the given ref.  When running  tsrc sync : If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.     copyfiles : (optional): A list of dictionaries with  src  and  dest  keys, like so:    repos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt  In this case, after  proj1/foo  has been cloned in  workspace /foo ,\n(using  develop  branch),  foo.txt  will be copied from  proj1/foo/foo.txt  to workspace /top.txt .", 
             "title": "repos"
         }, 
         {
@@ -202,18 +202,13 @@
         }, 
         {
             "location": "/changelog/", 
-            "text": "Changelog\n\n\nNext release\n\n\n\n\nSupport for specifying custom branches in the manifest\n\n\n\n\nv0.1.4 (2017-08-04)\n\n\nSupport for Python 3.3, 3.4, 3.5 and 3.6\n\n\nv0.1.1 (2017-08-02)\n\n\nFirst public release", 
+            "text": "Changelog\n\n\n\n\n\n\nSupport for specifying custom branches in the manifest\n\n\nSupport for specifying fixed refs (tags or commit) in the manifest.\n\n\n\n\nNew syntax is:\n\n\nrepos:\n  - src: foo\n    url: git@gitlab.com:proj/foo\n    branch: next\n\n  - src: bar\n    url: git@gitlab.com:proj/bar\n    branch: master\n    ref: v0.1\n\n\n\n\nNote that \nbranch\n is still required.\n\n\nv0.1.4 (2017-08-04)\n\n\nSupport for Python 3.3, 3.4, 3.5 and 3.6\n\n\nv0.1.1 (2017-08-02)\n\n\nFirst public release", 
             "title": "Changelog"
         }, 
         {
             "location": "/changelog/#changelog", 
             "text": "", 
             "title": "Changelog"
-        }, 
-        {
-            "location": "/changelog/#next_release", 
-            "text": "Support for specifying custom branches in the manifest", 
-            "title": "Next release"
         }, 
         {
             "location": "/changelog/#v014_2017-08-04", 

@@ -90,7 +90,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ref/formats/">Configuration file formats</a>
+        <a class="" href="../ref/formats/">Configuration files formats</a>
         
     </li>
 
@@ -119,8 +119,6 @@
             <ul>
             
                 <li class="toctree-l3"><a href="#changelog">Changelog</a></li>
-                
-                    <li><a class="toctree-l4" href="#next_release">Next release</a></li>
                 
                     <li><a class="toctree-l4" href="#v014_2017-08-04">v0.1.4 (2017-08-04)</a></li>
                 
@@ -165,10 +163,24 @@
             <div class="section">
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
-<h2 id="next_release">Next release<a class="headerlink" href="#next_release" title="Permanent link">&para;</a></h2>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Support for specifying custom branches in the manifest</li>
+<li>Support for specifying fixed refs (tags or commit) in the manifest.</li>
 </ul>
+<p>New syntax is:</p>
+<pre><code class="yaml">repos:
+  - src: foo
+    url: git@gitlab.com:proj/foo
+    branch: next
+
+  - src: bar
+    url: git@gitlab.com:proj/bar
+    branch: master
+    ref: v0.1
+</code></pre>
+
+<p>Note that <code>branch</code> is still required.</p>
 <h2 id="v014_2017-08-04">v0.1.4 (2017-08-04)<a class="headerlink" href="#v014_2017-08-04" title="Permanent link">&para;</a></h2>
 <p>Support for Python 3.3, 3.4, 3.5 and 3.6</p>
 <h2 id="v011_2017-08-02">v0.1.1 (2017-08-02)<a class="headerlink" href="#v011_2017-08-02" title="Permanent link">&para;</a></h2>

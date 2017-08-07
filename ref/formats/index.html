@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Configuration file formats - Tanker documentation</title>
+  <title>Configuration files formats - Tanker documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Configuration file formats";
+    var mkdocs_page_name = "Configuration files formats";
     var mkdocs_page_input_path = "ref/formats.md";
     var mkdocs_page_url = "/ref/formats/";
   </script>
@@ -90,11 +90,11 @@
         
             
     <li class="toctree-l1 current">
-        <a class="current" href="./">Configuration file formats</a>
+        <a class="current" href="./">Configuration files formats</a>
         
             <ul>
             
-                <li class="toctree-l3"><a href="#configuration_file_formats">Configuration file formats</a></li>
+                <li class="toctree-l3"><a href="#configuration_files_formats">Configuration files formats</a></li>
                 
                     <li><a class="toctree-l4" href="#manifest_format">Manifest format</a></li>
                 
@@ -156,7 +156,7 @@
         
       
     
-    <li>Configuration file formats</li>
+    <li>Configuration files formats</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -166,7 +166,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="configuration_file_formats">Configuration file formats<a class="headerlink" href="#configuration_file_formats" title="Permanent link">&para;</a></h1>
+                <h1 id="configuration_files_formats">Configuration files formats<a class="headerlink" href="#configuration_files_formats" title="Permanent link">&para;</a></h1>
 <p>Unless otherwise noted, all configuration files use <a href="http://www.yaml.org/">YAML</a>
 syntax</p>
 <h2 id="manifest_format">Manifest format<a class="headerlink" href="#manifest_format" title="Permanent link">&para;</a></h2>
@@ -187,10 +187,19 @@ syntax</p>
 <li><code>url</code> (required): URL to use when cloning the repository (usually using ssh)</li>
 <li><code>branch</code> (optional): The branch to use when cloning the repository (defaults
   to <code>master</code>)</li>
-</ul>
-<p>In addition, the dictionary can contain a list of files to copy:</p>
+<li>
+<p><code>ref</code> (optional): Can be a tag like <code>v0.1</code> or a commit like <code>0ab12ef</code>.
+   If <code>ref</code> is set:</p>
 <ul>
-<li><code>copyfiles</code>: a list of dictionary with <code>src</code> and <code>dest</code> keys, like so:</li>
+<li>When running <code>tsrc init</code>: Project will be cloned with the given branch, and then reset to
+    the given ref.</li>
+<li>When running <code>tsrc sync</code>: If the project is clean, project will be reset
+    to the given ref, else a warning message will be printed.</li>
+</ul>
+</li>
+<li>
+<p><code>copyfiles</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</p>
+</li>
 </ul>
 <pre><code>repos:
   src: foo

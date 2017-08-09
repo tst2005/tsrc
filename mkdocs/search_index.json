@@ -1,218 +1,223 @@
 {
     "docs": [
         {
-            "location": "/", 
-            "text": "tsrc - managing multiple git repositories\n\n\nWhat it is\n\n\ntsrc\n is a command-line tool that helps you manage several git repositories.\n\n\nWe use it at \ntanker.io\n because:\n\n\n\n\nWe have a small, versatile team of developers\n\n\nWe use several programming languages\n\n\nWe need a single source of truth for the list of repositories we want to work\n  on: their URL, branch and locations should be the same across all the team.\n\n\nNone on the many existing solutions did fully match our needs.\n  (see the \nFAQ\n for more details)\n\n\n\n\nIn addition, \ntsrc\n has some support for interaction with \nGitLab\n and makes\nhandling merge requests from the command line possible.\n\n\nInstalling tsrc\n\n\ntsrc\n is compatible with \nPython 3.3\n or higher.\n\n\nIt is available on \npypi\n and can be\ninstalled with \npip\n:\n\n\nLinux\n\n\n$ pip3 install tsrc --user\n# Make sure ~/.local/bin is in your PATH\n\n\n\n\nmacOS\n\n\n$ pip3 install tsrc --user\n# Make sure ~/Library/Python/3.x/bin is in your PATH\n\n\n\n\nWindows\n\n\nInstall latest Python3 from \npython.org/downloads\n,\nopen cmd.exe and run:\n\n\n$ pip3 install tsrc\n\n\n\n\nNext steps\n\n\nIf \ntsrc\n is installed properly (check by running \ntsrc version\n), feel free to\nproceed to \nbasic usage\n.", 
+            "location": "/",
+            "text": "tsrc - managing multiple git repositories\n\u00b6\n\n\nWhat it is\n\u00b6\n\n\ntsrc\n is a command-line tool that helps you manage several git repositories.\n\n\nWe use it at \ntanker.io\n because:\n\n\n\n\nWe have a small, versatile team of developers\n\n\nWe use several programming languages\n\n\nWe need a single source of truth for the list of repositories we want to work\n  on: their URL, branch and locations should be the same across all the team.\n\n\nNone on the many existing solutions did fully match our needs.\n  (see the \nFAQ\n for more details)\n\n\n\n\nIn addition, \ntsrc\n has some support for interaction with \nGitLab\n and makes\nhandling merge requests from the command line possible.\n\n\nInstalling tsrc\n\u00b6\n\n\ntsrc\n is compatible with \nPython 3.3\n or higher.\n\n\nIt is available on \npypi\n and can be\ninstalled with \npip\n:\n\n\nLinux\n\u00b6\n\n\n$ pip3 install tsrc --user\n# Make sure ~/.local/bin is in your PATH\n\n\n\n\nmacOS\n\u00b6\n\n\n$ pip3 install tsrc --user\n# Make sure ~/Library/Python/3.x/bin is in your PATH\n\n\n\n\nWindows\n\u00b6\n\n\nInstall latest Python3 from \npython.org/downloads\n,\nopen cmd.exe and run:\n\n\n$ pip3 install tsrc\n\n\n\n\nNext steps\n\u00b6\n\n\nIf \ntsrc\n is installed properly (check by running \ntsrc version\n), feel free to\nproceed to \nbasic usage\n.",
             "title": "Home"
-        }, 
+        },
         {
-            "location": "/#tsrc_-_managing_multiple_git_repositories", 
-            "text": "", 
+            "location": "/#tsrc_-_managing_multiple_git_repositories",
+            "text": "",
             "title": "tsrc - managing multiple git repositories"
-        }, 
+        },
         {
-            "location": "/#what_it_is", 
-            "text": "tsrc  is a command-line tool that helps you manage several git repositories.  We use it at  tanker.io  because:   We have a small, versatile team of developers  We use several programming languages  We need a single source of truth for the list of repositories we want to work\n  on: their URL, branch and locations should be the same across all the team.  None on the many existing solutions did fully match our needs.\n  (see the  FAQ  for more details)   In addition,  tsrc  has some support for interaction with  GitLab  and makes\nhandling merge requests from the command line possible.", 
+            "location": "/#what_it_is",
+            "text": "tsrc  is a command-line tool that helps you manage several git repositories.  We use it at  tanker.io  because:   We have a small, versatile team of developers  We use several programming languages  We need a single source of truth for the list of repositories we want to work\n  on: their URL, branch and locations should be the same across all the team.  None on the many existing solutions did fully match our needs.\n  (see the  FAQ  for more details)   In addition,  tsrc  has some support for interaction with  GitLab  and makes\nhandling merge requests from the command line possible.",
             "title": "What it is"
-        }, 
+        },
         {
-            "location": "/#installing_tsrc", 
-            "text": "tsrc  is compatible with  Python 3.3  or higher.  It is available on  pypi  and can be\ninstalled with  pip :", 
+            "location": "/#installing_tsrc",
+            "text": "tsrc  is compatible with  Python 3.3  or higher.  It is available on  pypi  and can be\ninstalled with  pip :",
             "title": "Installing tsrc"
-        }, 
+        },
         {
-            "location": "/#linux", 
-            "text": "$ pip3 install tsrc --user\n# Make sure ~/.local/bin is in your PATH", 
+            "location": "/#linux",
+            "text": "$ pip3 install tsrc --user\n# Make sure ~/.local/bin is in your PATH",
             "title": "Linux"
-        }, 
+        },
         {
-            "location": "/#macos", 
-            "text": "$ pip3 install tsrc --user\n# Make sure ~/Library/Python/3.x/bin is in your PATH", 
+            "location": "/#macos",
+            "text": "$ pip3 install tsrc --user\n# Make sure ~/Library/Python/3.x/bin is in your PATH",
             "title": "macOS"
-        }, 
+        },
         {
-            "location": "/#windows", 
-            "text": "Install latest Python3 from  python.org/downloads ,\nopen cmd.exe and run:  $ pip3 install tsrc", 
+            "location": "/#windows",
+            "text": "Install latest Python3 from  python.org/downloads ,\nopen cmd.exe and run:  $ pip3 install tsrc",
             "title": "Windows"
-        }, 
+        },
         {
-            "location": "/#next_steps", 
-            "text": "If  tsrc  is installed properly (check by running  tsrc version ), feel free to\nproceed to  basic usage .", 
+            "location": "/#next_steps",
+            "text": "If  tsrc  is installed properly (check by running  tsrc version ), feel free to\nproceed to  basic usage .",
             "title": "Next steps"
-        }, 
+        },
         {
-            "location": "/guide/basics/", 
-            "text": "Basic tsrc usage\n\n\nCloning a set of repositories\n\n\ntsrc\n is driven by a manifest file that contains the names and paths of repositories to clone.\n\n\nIt uses the YAML syntax and looks like:\n\n\nrepos:\n  - src: foo\n    url: git@gitlab.local:acme/foo\n\n  - src: bar\n    url: git@gitlab.local:acme/bar\n\n\n\n\n\n\nNote\n\n\nThe full manifest file format is described in the \nreference\n.\n\n\n\n\nThe manifest must be put in a git repository too. You can then use the following commands to create a new workspace:\n\n\n$ mkdir ~/work\n$ cd work\n$ tsrc init git@gitlab.local:acme/manifest.git\n\n\n\n\nIn this example:\n\n\n\n\nfoo\n will be cloned in \nwork\n/foo\n using \ngit@gitlab.com/acme/foo.git\n origin url.\n\n\nSimilarly, \nbar\n will be cloned in \nwork\n/bar\n using \ngit@gitlab.com:acme/bar.git\n\n\n\n\nMaking sure all the repositories are up to date\n\n\nYou can update all the repositories by using \ntsrc sync\n.\n\n\n\n\nThe manifest itself will be updated first.\n\n\nIf a new repository has been added to the manifest, it will be cloned.\n\n\nLastly, the other repositories will be updated.\n\n\n\n\nNote that \ntsrc sync\n only updates the repositories if the changes are trivial:\n\n\n\n\nIf the branch has diverged, \ntsrc\n will do nothing. It's up to you to use\n  \nrebase\n or \nmerge\n\n\nDitto if there is no remote tracking branch", 
+            "location": "/guide/basics/",
+            "text": "Basic tsrc usage\n\u00b6\n\n\nCloning a set of repositories\n\u00b6\n\n\ntsrc\n is driven by a manifest file that contains the names and paths of repositories to clone.\n\n\nIt uses the YAML syntax and looks like:\n\n\nrepos:\n  - src: foo\n    url: git@gitlab.local:acme/foo\n\n  - src: bar\n    url: git@gitlab.local:acme/bar\n\n\n\n\n\n\nNote\n\n\nThe full manifest file format is described in the \nreference\n.\n\n\n\n\nThe manifest must be put in a git repository too. You can then use the following commands to create a new workspace:\n\n\n$ mkdir ~/work\n$ cd work\n$ tsrc init git@gitlab.local:acme/manifest.git\n\n\n\n\nIn this example:\n\n\n\n\nfoo\n will be cloned in \n<work>/foo\n using \ngit@gitlab.com/acme/foo.git\n origin url.\n\n\nSimilarly, \nbar\n will be cloned in \n<work>/bar\n using \ngit@gitlab.com:acme/bar.git\n\n\n\n\nMaking sure all the repositories are up to date\n\u00b6\n\n\nYou can update all the repositories by using \ntsrc sync\n.\n\n\n\n\nThe manifest itself will be updated first.\n\n\nIf a new repository has been added to the manifest, it will be cloned.\n\n\nLastly, the other repositories will be updated.\n\n\n\n\nNote that \ntsrc sync\n only updates the repositories if the changes are trivial:\n\n\n\n\nIf the branch has diverged, \ntsrc\n will do nothing. It's up to you to use\n  \nrebase\n or \nmerge\n\n\nDitto if there is no remote tracking branch",
             "title": "Basic usage"
-        }, 
+        },
         {
-            "location": "/guide/basics/#basic_tsrc_usage", 
-            "text": "", 
+            "location": "/guide/basics/#basic_tsrc_usage",
+            "text": "",
             "title": "Basic tsrc usage"
-        }, 
+        },
         {
-            "location": "/guide/basics/#cloning_a_set_of_repositories", 
-            "text": "tsrc  is driven by a manifest file that contains the names and paths of repositories to clone.  It uses the YAML syntax and looks like:  repos:\n  - src: foo\n    url: git@gitlab.local:acme/foo\n\n  - src: bar\n    url: git@gitlab.local:acme/bar   Note  The full manifest file format is described in the  reference .   The manifest must be put in a git repository too. You can then use the following commands to create a new workspace:  $ mkdir ~/work\n$ cd work\n$ tsrc init git@gitlab.local:acme/manifest.git  In this example:   foo  will be cloned in  work /foo  using  git@gitlab.com/acme/foo.git  origin url.  Similarly,  bar  will be cloned in  work /bar  using  git@gitlab.com:acme/bar.git", 
+            "location": "/guide/basics/#cloning_a_set_of_repositories",
+            "text": "tsrc  is driven by a manifest file that contains the names and paths of repositories to clone.  It uses the YAML syntax and looks like:  repos:\n  - src: foo\n    url: git@gitlab.local:acme/foo\n\n  - src: bar\n    url: git@gitlab.local:acme/bar   Note  The full manifest file format is described in the  reference .   The manifest must be put in a git repository too. You can then use the following commands to create a new workspace:  $ mkdir ~/work\n$ cd work\n$ tsrc init git@gitlab.local:acme/manifest.git  In this example:   foo  will be cloned in  <work>/foo  using  git@gitlab.com/acme/foo.git  origin url.  Similarly,  bar  will be cloned in  <work>/bar  using  git@gitlab.com:acme/bar.git",
             "title": "Cloning a set of repositories"
-        }, 
+        },
         {
-            "location": "/guide/basics/#making_sure_all_the_repositories_are_up_to_date", 
-            "text": "You can update all the repositories by using  tsrc sync .   The manifest itself will be updated first.  If a new repository has been added to the manifest, it will be cloned.  Lastly, the other repositories will be updated.   Note that  tsrc sync  only updates the repositories if the changes are trivial:   If the branch has diverged,  tsrc  will do nothing. It's up to you to use\n   rebase  or  merge  Ditto if there is no remote tracking branch", 
+            "location": "/guide/basics/#making_sure_all_the_repositories_are_up_to_date",
+            "text": "You can update all the repositories by using  tsrc sync .   The manifest itself will be updated first.  If a new repository has been added to the manifest, it will be cloned.  Lastly, the other repositories will be updated.   Note that  tsrc sync  only updates the repositories if the changes are trivial:   If the branch has diverged,  tsrc  will do nothing. It's up to you to use\n   rebase  or  merge  Ditto if there is no remote tracking branch",
             "title": "Making sure all the repositories are up to date"
-        }, 
+        },
         {
-            "location": "/guide/merge_requests/", 
-            "text": "Handling GitLab merge requests\n\n\nConfiguration\n\n\nThe first step is to log in to GitLab and get your personal access token.\n\n\nThen, write a file in \n~/.config/tsrc.yml\n containing the token:\n\n\nauth:\n  gitlab:\n    token: \nyour token\n\n\n\n\n\n\n\nNote\n\n\nThe full config file format is described in the \nreference\n.\n\n\n\n\nThe second step is to tell \ntsrc\n about the HTTP url of your GitLab instance.\n\n\nThis is used to call the \nGitLab HTTP API\n (currently using version \n4\n)\n\n\nThis is done in the \nmanifest\n file:\n\n\ngitlab:\n  url: http://gitlab.local\n\nrepos:\n - ...\n\n\n\n\nCreating and accepting merge requests\n\n\nHere's how you can create and assign a merge request\n\n\n# start working on your branch\n$ tsrc push [--assignee ASSIGNEE]\n\n\n\n\nWhen the review is done, you can accept it and let GitLab merge the branch once\nthe CI pipeline passes with the following command:\n\n\n$ tsrc push --accept", 
+            "location": "/guide/merge_requests/",
+            "text": "Handling GitLab merge requests\n\u00b6\n\n\nConfiguration\n\u00b6\n\n\nThe first step is to log in to GitLab and get your personal access token.\n\n\nThen, write a file in \n~/.config/tsrc.yml\n containing the token:\n\n\nauth:\n  gitlab:\n    token: <your token>\n\n\n\n\n\n\nNote\n\n\nThe full config file format is described in the \nreference\n.\n\n\n\n\nThe second step is to tell \ntsrc\n about the HTTP url of your GitLab instance.\n\n\nThis is used to call the \nGitLab HTTP API\n (currently using version \n4\n)\n\n\nThis is done in the \nmanifest\n file:\n\n\ngitlab:\n  url: http://gitlab.local\n\nrepos:\n - ...\n\n\n\n\nCreating and accepting merge requests\n\u00b6\n\n\nHere's how you can create and assign a merge request\n\n\n# start working on your branch\n$ tsrc push [--assignee ASSIGNEE]\n\n\n\n\nWhen the review is done, you can accept it and let GitLab merge the branch once\nthe CI pipeline passes with the following command:\n\n\n$ tsrc push --accept",
             "title": "Handling GitLab merge requests"
-        }, 
+        },
         {
-            "location": "/guide/merge_requests/#handling_gitlab_merge_requests", 
-            "text": "", 
+            "location": "/guide/merge_requests/#handling_gitlab_merge_requests",
+            "text": "",
             "title": "Handling GitLab merge requests"
-        }, 
+        },
         {
-            "location": "/guide/merge_requests/#configuration", 
-            "text": "The first step is to log in to GitLab and get your personal access token.  Then, write a file in  ~/.config/tsrc.yml  containing the token:  auth:\n  gitlab:\n    token:  your token    Note  The full config file format is described in the  reference .   The second step is to tell  tsrc  about the HTTP url of your GitLab instance.  This is used to call the  GitLab HTTP API  (currently using version  4 )  This is done in the  manifest  file:  gitlab:\n  url: http://gitlab.local\n\nrepos:\n - ...", 
+            "location": "/guide/merge_requests/#configuration",
+            "text": "The first step is to log in to GitLab and get your personal access token.  Then, write a file in  ~/.config/tsrc.yml  containing the token:  auth:\n  gitlab:\n    token: <your token>   Note  The full config file format is described in the  reference .   The second step is to tell  tsrc  about the HTTP url of your GitLab instance.  This is used to call the  GitLab HTTP API  (currently using version  4 )  This is done in the  manifest  file:  gitlab:\n  url: http://gitlab.local\n\nrepos:\n - ...",
             "title": "Configuration"
-        }, 
+        },
         {
-            "location": "/guide/merge_requests/#creating_and_accepting_merge_requests", 
-            "text": "Here's how you can create and assign a merge request  # start working on your branch\n$ tsrc push [--assignee ASSIGNEE]  When the review is done, you can accept it and let GitLab merge the branch once\nthe CI pipeline passes with the following command:  $ tsrc push --accept", 
+            "location": "/guide/merge_requests/#creating_and_accepting_merge_requests",
+            "text": "Here's how you can create and assign a merge request  # start working on your branch\n$ tsrc push [--assignee ASSIGNEE]  When the review is done, you can accept it and let GitLab merge the branch once\nthe CI pipeline passes with the following command:  $ tsrc push --accept",
             "title": "Creating and accepting merge requests"
-        }, 
+        },
         {
-            "location": "/ref/cli/", 
-            "text": "Command line usage\n\n\nImportant note\n\n\nWe use the \nargparse\n library to\nparse command line arguments, so the \n--help\n messages are always up-to-date,\nprobably more so than this documentation :)\n\n\nGeneral\n\n\ntsrc\n uses the same \"subcommand\" pattern as git does.\n\n\nOptions common to all commands are placed right before the command name.\n\n\nOptions after the command name only apply to this command.\n\n\nFor instance:\n\n\n$ tsrc --verbose sync\n$ tsrc init MANIFEST_URL\n\n\n\n\nUsage\n\n\n\n\ntsrc init MANIFEST_URL\n\n\n\n\nInitializes a new workspace.\n\n\nMANIFEST_URL should be a git URL containing a valid\n\nmanifest.yml\n file.\n\n\n\n\ntsrc foreach -- command --opt1 arg1\n\n\n\n\nRuns \ncommand --opt1 arg1\n in every repository, and report failures\nat the end.\n\n\nNote the \n--\n token to separate options for \ncommand\n from options for\n\ntsrc\n\n\n\n\ntsrc foreach -c 'command --opt1 arg1'\n\n\nDitto, but uses a shell. (\n/bin/sh\n on Linux or macOS, \ncmd.exe\n on Windows)\n\n\ntsrc log --from FROM [--to TO]\n\n\n\n\nDisplay a summary of all changes since \nFROM\n (should be a tag),\nto \nTO\n (defaulting to \nmaster\n)\n\n\nNote that if no changes are found, the repository will not be displayed at\nall.\n\n\n\n\ntsrc push [--assignee ASSIGNEE]\n\n\n\n\nYou should run this from a repository with the correct branch checked out.\n\n\n(The command will fail if you run this while on the \nmaster\n branch or in\n\"detached HEAD\" mode)\n\n\nASSIGNEE\n is optional and should match the name of an active GitLab user.\n\n\nThe merge request will get created if no other opened merge request with the same\nbranch exists. Otherwise, the existing merge request will be updated.\n\n\n\n\ntsrc push [--ready|--wip]\n\n\nToggle the \nWIP\n (\"Work In Progress\") prefix for the merge request.\n\n\ntsrc push --accept\n\n\n\n\nTell GitLab to merge the merge request after the CI has passed.\n\n\nNote that the source branch will get automatically removed. (Which should\nnot matter since all the information about the source branch will\nbe found in the merge commit)\n\n\n\n\ntsrc status\n\n\n\n\nDisplays a summary of the status of your workspace:\n\n\n\n\nShows dirty repos\n\n\nShows repos not on the expected branch\n\n\n\n\n\n\ntsrc sync\n\n\nUpdates all the repositories and shows a summary at the end.\n\n\ntsrc version\n\n\nDisplays \ntsrc\n version number, along additional data if run from a git clone.", 
+            "location": "/ref/cli/",
+            "text": "Command line usage\n\u00b6\n\n\nImportant note\n\u00b6\n\n\nWe use the \nargparse\n library to\nparse command line arguments, so the \n--help\n messages are always up-to-date,\nprobably more so than this documentation :)\n\n\nGeneral\n\u00b6\n\n\ntsrc\n uses the same \"subcommand\" pattern as git does.\n\n\nOptions common to all commands are placed right before the command name.\n\n\nOptions after the command name only apply to this command.\n\n\nFor instance:\n\n\n$ tsrc --verbose sync\n$ tsrc init MANIFEST_URL\n\n\n\n\nUsage\n\u00b6\n\n\n\n\ntsrc init MANIFEST_URL\n\n\n\n\nInitializes a new workspace.\n\n\nMANIFEST_URL should be a git URL containing a valid\n\nmanifest.yml\n file.\n\n\n\n\ntsrc foreach -- command --opt1 arg1\n\n\n\n\nRuns \ncommand --opt1 arg1\n in every repository, and report failures\nat the end.\n\n\nNote the \n--\n token to separate options for \ncommand\n from options for\n\ntsrc\n\n\n\n\ntsrc foreach -c 'command --opt1 arg1'\n\n\nDitto, but uses a shell. (\n/bin/sh\n on Linux or macOS, \ncmd.exe\n on Windows)\n\n\ntsrc log --from FROM [--to TO]\n\n\n\n\nDisplay a summary of all changes since \nFROM\n (should be a tag),\nto \nTO\n (defaulting to \nmaster\n)\n\n\nNote that if no changes are found, the repository will not be displayed at\nall.\n\n\n\n\ntsrc push [--assignee ASSIGNEE]\n\n\n\n\nYou should run this from a repository with the correct branch checked out.\n\n\n(The command will fail if you run this while on the \nmaster\n branch or in\n\"detached HEAD\" mode)\n\n\nASSIGNEE\n is optional and should match the name of an active GitLab user.\n\n\nThe merge request will get created if no other opened merge request with the same\nbranch exists. Otherwise, the existing merge request will be updated.\n\n\n\n\ntsrc push [--ready|--wip]\n\n\nToggle the \nWIP\n (\"Work In Progress\") prefix for the merge request.\n\n\ntsrc push --accept\n\n\n\n\nTell GitLab to merge the merge request after the CI has passed.\n\n\nNote that the source branch will get automatically removed. (Which should\nnot matter since all the information about the source branch will\nbe found in the merge commit)\n\n\n\n\ntsrc status\n\n\n\n\nDisplays a summary of the status of your workspace:\n\n\n\n\nShows dirty repos\n\n\nShows repos not on the expected branch\n\n\n\n\n\n\ntsrc sync\n\n\nUpdates all the repositories and shows a summary at the end.\n\n\ntsrc version\n\n\nDisplays \ntsrc\n version number, along additional data if run from a git clone.",
             "title": "Comand line usage"
-        }, 
+        },
         {
-            "location": "/ref/cli/#command_line_usage", 
-            "text": "", 
+            "location": "/ref/cli/#command_line_usage",
+            "text": "",
             "title": "Command line usage"
-        }, 
+        },
         {
-            "location": "/ref/cli/#important_note", 
-            "text": "We use the  argparse  library to\nparse command line arguments, so the  --help  messages are always up-to-date,\nprobably more so than this documentation :)", 
+            "location": "/ref/cli/#important_note",
+            "text": "We use the  argparse  library to\nparse command line arguments, so the  --help  messages are always up-to-date,\nprobably more so than this documentation :)",
             "title": "Important note"
-        }, 
+        },
         {
-            "location": "/ref/cli/#general", 
-            "text": "tsrc  uses the same \"subcommand\" pattern as git does.  Options common to all commands are placed right before the command name.  Options after the command name only apply to this command.  For instance:  $ tsrc --verbose sync\n$ tsrc init MANIFEST_URL", 
+            "location": "/ref/cli/#general",
+            "text": "tsrc  uses the same \"subcommand\" pattern as git does.  Options common to all commands are placed right before the command name.  Options after the command name only apply to this command.  For instance:  $ tsrc --verbose sync\n$ tsrc init MANIFEST_URL",
             "title": "General"
-        }, 
+        },
         {
-            "location": "/ref/cli/#usage", 
-            "text": "tsrc init MANIFEST_URL   Initializes a new workspace.  MANIFEST_URL should be a git URL containing a valid manifest.yml  file.   tsrc foreach -- command --opt1 arg1   Runs  command --opt1 arg1  in every repository, and report failures\nat the end.  Note the  --  token to separate options for  command  from options for tsrc   tsrc foreach -c 'command --opt1 arg1'  Ditto, but uses a shell. ( /bin/sh  on Linux or macOS,  cmd.exe  on Windows)  tsrc log --from FROM [--to TO]   Display a summary of all changes since  FROM  (should be a tag),\nto  TO  (defaulting to  master )  Note that if no changes are found, the repository will not be displayed at\nall.   tsrc push [--assignee ASSIGNEE]   You should run this from a repository with the correct branch checked out.  (The command will fail if you run this while on the  master  branch or in\n\"detached HEAD\" mode)  ASSIGNEE  is optional and should match the name of an active GitLab user.  The merge request will get created if no other opened merge request with the same\nbranch exists. Otherwise, the existing merge request will be updated.   tsrc push [--ready|--wip]  Toggle the  WIP  (\"Work In Progress\") prefix for the merge request.  tsrc push --accept   Tell GitLab to merge the merge request after the CI has passed.  Note that the source branch will get automatically removed. (Which should\nnot matter since all the information about the source branch will\nbe found in the merge commit)   tsrc status   Displays a summary of the status of your workspace:   Shows dirty repos  Shows repos not on the expected branch    tsrc sync  Updates all the repositories and shows a summary at the end.  tsrc version  Displays  tsrc  version number, along additional data if run from a git clone.", 
+            "location": "/ref/cli/#usage",
+            "text": "tsrc init MANIFEST_URL   Initializes a new workspace.  MANIFEST_URL should be a git URL containing a valid manifest.yml  file.   tsrc foreach -- command --opt1 arg1   Runs  command --opt1 arg1  in every repository, and report failures\nat the end.  Note the  --  token to separate options for  command  from options for tsrc   tsrc foreach -c 'command --opt1 arg1'  Ditto, but uses a shell. ( /bin/sh  on Linux or macOS,  cmd.exe  on Windows)  tsrc log --from FROM [--to TO]   Display a summary of all changes since  FROM  (should be a tag),\nto  TO  (defaulting to  master )  Note that if no changes are found, the repository will not be displayed at\nall.   tsrc push [--assignee ASSIGNEE]   You should run this from a repository with the correct branch checked out.  (The command will fail if you run this while on the  master  branch or in\n\"detached HEAD\" mode)  ASSIGNEE  is optional and should match the name of an active GitLab user.  The merge request will get created if no other opened merge request with the same\nbranch exists. Otherwise, the existing merge request will be updated.   tsrc push [--ready|--wip]  Toggle the  WIP  (\"Work In Progress\") prefix for the merge request.  tsrc push --accept   Tell GitLab to merge the merge request after the CI has passed.  Note that the source branch will get automatically removed. (Which should\nnot matter since all the information about the source branch will\nbe found in the merge commit)   tsrc status   Displays a summary of the status of your workspace:   Shows dirty repos  Shows repos not on the expected branch    tsrc sync  Updates all the repositories and shows a summary at the end.  tsrc version  Displays  tsrc  version number, along additional data if run from a git clone.",
             "title": "Usage"
-        }, 
+        },
         {
-            "location": "/ref/formats/", 
-            "text": "Configuration files formats\n\n\nUnless otherwise noted, all configuration files use \nYAML\n\nsyntax\n\n\nManifest format\n\n\nThe manifest is always parsed as a dictionary .\n\n\nTop fields\n\n\n\n\n\n\nrepos\n (required): list of repos to clone\n\n\n\n\n\n\ngitlab.url\n (optional): HTTP URL of the GitLab instance\n\n\n\n\n\n\nrepos\n\n\nEach repository is also a dictionary, containing:\n\n\n\n\nsrc\n (required): relative path of the repository in the workspace\n\n\nurl\n (required): URL to use when cloning the repository (usually using ssh)\n\n\nbranch\n (optional): The branch to use when cloning the repository (defaults\n  to \nmaster\n)\n\n\n\n\nref\n (optional): Can be a tag like \nv0.1\n or a commit like \n0ab12ef\n.\n   If \nref\n is set:\n\n\n\n\nWhen running \ntsrc init\n: Project will be cloned with the given branch, and then reset to\n    the given ref.\n\n\nWhen running \ntsrc sync\n: If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.\n\n\n\n\n\n\n\n\ncopyfiles\n: (optional): A list of dictionaries with \nsrc\n and \ndest\n keys, like so:\n\n\n\n\n\n\nrepos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt\n\n\n\n\nIn this case, after \nproj1/foo\n has been cloned in \nworkspace\n/foo\n,\n(using \ndevelop\n branch), \nfoo.txt\n will be copied from \nproj1/foo/foo.txt\n to\n\nworkspace\n/top.txt\n.\n\n\ntsrc.yml format\n\n\ntsrc.yml\n must be written in \nXDG_CONFIG_HOME\n (or \n~/.config/\n).\n\n\nWe use GitLab authentication with token, like so:\n\n\nauth:\n  gitlab:\n    token: \nyour token", 
+            "location": "/ref/formats/",
+            "text": "Configuration files formats\n\u00b6\n\n\nUnless otherwise noted, all configuration files use \nYAML\n\nsyntax\n\n\nManifest format\n\u00b6\n\n\nThe manifest is always parsed as a dictionary .\n\n\nTop fields\n\u00b6\n\n\n\n\n\n\nrepos\n (required): list of repos to clone\n\n\n\n\n\n\ngitlab.url\n (optional): HTTP URL of the GitLab instance\n\n\n\n\n\n\nrepos\n\u00b6\n\n\nEach repository is also a dictionary, containing:\n\n\n\n\nsrc\n (required): relative path of the repository in the workspace\n\n\nurl\n (required): URL to use when cloning the repository (usually using ssh)\n\n\nbranch\n (optional): The branch to use when cloning the repository (defaults\n  to \nmaster\n)\n\n\n\n\nref\n (optional): Can be a tag like \nv0.1\n or a hash like \n0ab12ef\n.\n   If \nref\n is set:\n\n\n\n\nWhen running \ntsrc init\n: Project will be cloned with the given branch, and then reset to\n    the given ref.\n\n\nWhen running \ntsrc sync\n: If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.\n\n\n\n\n\n\n\n\ncopyfiles\n: (optional): A list of dictionaries with \nsrc\n and \ndest\n keys, like so:\n\n\n\n\n\n\nrepos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt\n\n\n\n\nIn this case, after \nproj1/foo\n has been cloned in \n<workspace>/foo\n,\n(using \ndevelop\n branch), \nfoo.txt\n will be copied from \nproj1/foo/foo.txt\n to\n\n<workspace>/top.txt\n.\n\n\ntsrc.yml format\n\u00b6\n\n\ntsrc.yml\n must be written in \nXDG_CONFIG_HOME\n (or \n~/.config/\n).\n\n\nWe use GitLab authentication with token, like so:\n\n\nauth:\n  gitlab:\n    token: <your token>",
             "title": "Configuration files formats"
-        }, 
+        },
         {
-            "location": "/ref/formats/#configuration_files_formats", 
-            "text": "Unless otherwise noted, all configuration files use  YAML \nsyntax", 
+            "location": "/ref/formats/#configuration_files_formats",
+            "text": "Unless otherwise noted, all configuration files use  YAML \nsyntax",
             "title": "Configuration files formats"
-        }, 
+        },
         {
-            "location": "/ref/formats/#manifest_format", 
-            "text": "The manifest is always parsed as a dictionary .", 
+            "location": "/ref/formats/#manifest_format",
+            "text": "The manifest is always parsed as a dictionary .",
             "title": "Manifest format"
-        }, 
+        },
         {
-            "location": "/ref/formats/#top_fields", 
-            "text": "repos  (required): list of repos to clone    gitlab.url  (optional): HTTP URL of the GitLab instance", 
+            "location": "/ref/formats/#top_fields",
+            "text": "repos  (required): list of repos to clone    gitlab.url  (optional): HTTP URL of the GitLab instance",
             "title": "Top fields"
-        }, 
+        },
         {
-            "location": "/ref/formats/#repos", 
-            "text": "Each repository is also a dictionary, containing:   src  (required): relative path of the repository in the workspace  url  (required): URL to use when cloning the repository (usually using ssh)  branch  (optional): The branch to use when cloning the repository (defaults\n  to  master )   ref  (optional): Can be a tag like  v0.1  or a commit like  0ab12ef .\n   If  ref  is set:   When running  tsrc init : Project will be cloned with the given branch, and then reset to\n    the given ref.  When running  tsrc sync : If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.     copyfiles : (optional): A list of dictionaries with  src  and  dest  keys, like so:    repos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt  In this case, after  proj1/foo  has been cloned in  workspace /foo ,\n(using  develop  branch),  foo.txt  will be copied from  proj1/foo/foo.txt  to workspace /top.txt .", 
+            "location": "/ref/formats/#repos",
+            "text": "Each repository is also a dictionary, containing:   src  (required): relative path of the repository in the workspace  url  (required): URL to use when cloning the repository (usually using ssh)  branch  (optional): The branch to use when cloning the repository (defaults\n  to  master )   ref  (optional): Can be a tag like  v0.1  or a hash like  0ab12ef .\n   If  ref  is set:   When running  tsrc init : Project will be cloned with the given branch, and then reset to\n    the given ref.  When running  tsrc sync : If the project is clean, project will be reset\n    to the given ref, else a warning message will be printed.     copyfiles : (optional): A list of dictionaries with  src  and  dest  keys, like so:    repos:\n  src: foo\n  url: gitlab:proj1/foo\n  branch: develop\n  copyfiles:\n    - src: foo.txt\n      dest: top.txt  In this case, after  proj1/foo  has been cloned in  <workspace>/foo ,\n(using  develop  branch),  foo.txt  will be copied from  proj1/foo/foo.txt  to <workspace>/top.txt .",
             "title": "repos"
-        }, 
+        },
         {
-            "location": "/ref/formats/#tsrcyml_format", 
-            "text": "tsrc.yml  must be written in  XDG_CONFIG_HOME  (or  ~/.config/ ).  We use GitLab authentication with token, like so:  auth:\n  gitlab:\n    token:  your token", 
+            "location": "/ref/formats/#tsrcyml_format",
+            "text": "tsrc.yml  must be written in  XDG_CONFIG_HOME  (or  ~/.config/ ).  We use GitLab authentication with token, like so:  auth:\n  gitlab:\n    token: <your token>",
             "title": "tsrc.yml format"
-        }, 
+        },
         {
-            "location": "/contrib/", 
-            "text": "Reporting bugs\n\n\nFeel free to use \ngithub bug tracker\n to open issues.\n\n\nWhen you do, please provide the following information:\n\n\n\n\ntsrc\n version\n\n\nDetails about your environment (operating system, Python version)\n\n\nThe exact command you run\n\n\nThe full output\n\n\n\n\nDoing so will ensure we can investigate your bug right away.\n\n\nAdding new features\n\n\nYou are free to open a pull request on Github for any feature you'd like.\n\n\nNote that for your merge request to be accepted, we'll ask that\n\n\n\n\nAll existing linters pass\n\n\nAll existing tests run\n\n\nThe new feature comes with appropriate tests\n\n\n\n\nSee the \n.travis.yml file\n\nto see what exactly what commands are run and the Python versions we\nsupport.", 
+            "location": "/contrib/",
+            "text": "Reporting bugs\n\u00b6\n\n\nFeel free to use \ngithub bug tracker\n to open issues.\n\n\nWhen you do, please provide the following information:\n\n\n\n\ntsrc\n version\n\n\nDetails about your environment (operating system, Python version)\n\n\nThe exact command you run\n\n\nThe full output\n\n\n\n\nDoing so will ensure we can investigate your bug right away.\n\n\nAdding new features\n\u00b6\n\n\nYou are free to open a pull request on Github for any feature you'd like.\n\n\nNote that for your merge request to be accepted, we'll ask that\n\n\n\n\nAll existing linters pass\n\n\nAll existing tests run\n\n\nThe new feature comes with appropriate tests\n\n\n\n\nSee the \n.travis.yml file\n\nto see what exactly what commands are run and the Python versions we\nsupport.",
             "title": "Contributing"
-        }, 
+        },
         {
-            "location": "/contrib/#reporting_bugs", 
-            "text": "Feel free to use  github bug tracker  to open issues.  When you do, please provide the following information:   tsrc  version  Details about your environment (operating system, Python version)  The exact command you run  The full output   Doing so will ensure we can investigate your bug right away.", 
+            "location": "/contrib/#reporting_bugs",
+            "text": "Feel free to use  github bug tracker  to open issues.  When you do, please provide the following information:   tsrc  version  Details about your environment (operating system, Python version)  The exact command you run  The full output   Doing so will ensure we can investigate your bug right away.",
             "title": "Reporting bugs"
-        }, 
+        },
         {
-            "location": "/contrib/#adding_new_features", 
-            "text": "You are free to open a pull request on Github for any feature you'd like.  Note that for your merge request to be accepted, we'll ask that   All existing linters pass  All existing tests run  The new feature comes with appropriate tests   See the  .travis.yml file \nto see what exactly what commands are run and the Python versions we\nsupport.", 
+            "location": "/contrib/#adding_new_features",
+            "text": "You are free to open a pull request on Github for any feature you'd like.  Note that for your merge request to be accepted, we'll ask that   All existing linters pass  All existing tests run  The new feature comes with appropriate tests   See the  .travis.yml file \nto see what exactly what commands are run and the Python versions we\nsupport.",
             "title": "Adding new features"
-        }, 
+        },
         {
-            "location": "/faq/", 
-            "text": "Frequently asked questions\n\n\nWhy not Python2 support?\n\n\nWe believe Python2 is an inferior language than Python3, and we use many\nPython3 features to make the code more readable and robust.\n\n\nPlus \nPython2.7 supports ends in 3 years\n.\n\n\nWhy not repo?\n\n\nWe used \nrepo\n for a while, but\nfound that tsrc had both a better command line API and a nicer output.\n\n\nOn a less subjective level:\n\n\n\n\n\n\nGood support for Windows (no need for CygWin or anything like that)\n\n\n\n\n\n\nGitLab\n support (automate working with merge requests)\n\n\n\n\n\n\nLastly, tsrc tries hard to never do any destructive operation or unexpected\n  actions.\n\n\nFor instance, \ntsrc\n never puts you in a \"detached HEAD\" state,\nnor does automatic rebases. It also never touches dirty repos.\n\n\nThis is achieved by using mostly 'porcelain' commands from git, instead of\nrelying on plumbings internals.\n\n\n\n\n\n\nAlso (and this matters a lot if you think about contribution):\n\n\n\n\nComprehensive test suite\n\n\nUses PEP8 coding style\n\n\nWritten in Python 3, not Python 2\n\n\n\n\nHere are a few features present in repo that are missing from \ntsrc\n\n(but may be implemented in the future)\n\n\n\n\nCloning a revision or tag\n\n\nCloning several repositories in parallel\n\n\nCloning just one or several groups of repositories\n\n\nSupport for other hosting services such as \ngerrit\n or \ngithub\n\n\n\n\nWhy not git-subrepo, mu-repo, or gr?\n\n\nAll this projects are fine but did not match our needs:\n\n\n\n\ngit-subrepo\n squashes commits, and\n  we prefer having normal clones everywhere\n\n\nmu-repo\n is nice and contains an\n  interesting dependency management feature, but currently we do not need this complexity.\n\n\n\n\nIn any case, now that the whole team is using \ntsrc\n all the time, it's likely\nwe'll keep using \ntsrc\n in the future.\n\n\nWhy not using libgit2 or similar?\n\n\npygit2\n now has pre-built wheels for Windows, but not for macOS and Linux.\n\n\nWe prefer to \nnot\n require compiling \nlibgit2\n.\n\n\nAlso, we prefer calling git \"porcelain\" commands, both for readability of the\nsource code and ease of debugging.\n\n\nWhy do you hide which git commands are run?\n\n\nIt's mainly a matter of not cluttering the output.\nWe take care of keeping the output of \ntsrc\n both concise, readable and\ninformative.\n\n\nThat being said:\n\n\n\n\nIn case a git command fails, we'll display the full command that was run.\n\n\nIf you still need to see \nall\n the git commands that are run, we provide a\n  \n--verbose\n flag, like so: \ntsrc --verbose sync\n\n\n\n\nWhy argparse?\n\n\nSee \ndocopt v argparse\n, and\n\nplease don't use click\n\n\nWhy YAML?\n\n\nIt's nice to read and write, and we use the excellent \nruamel.yaml\n which even has round-trip support.\n\n\nAlso, being Python fans, we don't mind the whitespace constraints :P", 
+            "location": "/faq/",
+            "text": "Frequently asked questions\n\u00b6\n\n\nWhy not Python2 support?\n\u00b6\n\n\nWe believe Python2 is an inferior language than Python3, and we use many\nPython3 features to make the code more readable and robust.\n\n\nPlus \nPython2.7 supports ends in 3 years\n.\n\n\nWhy not repo?\n\u00b6\n\n\nWe used \nrepo\n for a while, but\nfound that tsrc had both a better command line API and a nicer output.\n\n\nOn a less subjective level:\n\n\n\n\n\n\nGood support for Windows (no need for CygWin or anything like that)\n\n\n\n\n\n\nGitLab\n support (automate working with merge requests)\n\n\n\n\n\n\nLastly, tsrc tries hard to never do any destructive operation or unexpected\n  actions.\n\n\nFor instance, \ntsrc\n never puts you in a \"detached HEAD\" state,\nnor does automatic rebases. It also never touches dirty repos.\n\n\nThis is achieved by using mostly 'porcelain' commands from git, instead of\nrelying on plumbings internals.\n\n\n\n\n\n\nAlso (and this matters a lot if you think about contribution):\n\n\n\n\nComprehensive test suite\n\n\nUses PEP8 coding style\n\n\nWritten in Python 3, not Python 2\n\n\n\n\nHere are a few features present in repo that are missing from \ntsrc\n\n(but may be implemented in the future)\n\n\n\n\nCloning several repositories in parallel\n\n\nCloning just one or several groups of repositories\n\n\nSupport for other hosting services such as \ngerrit\n or \ngithub\n\n\n\n\nWhy not git-subrepo, mu-repo, or gr?\n\u00b6\n\n\nAll this projects are fine but did not match our needs:\n\n\n\n\ngit-subrepo\n squashes commits, and\n  we prefer having normal clones everywhere\n\n\nmu-repo\n is nice and contains an\n  interesting dependency management feature, but currently we do not need this complexity.\n\n\n\n\nIn any case, now that the whole team is using \ntsrc\n all the time, it's likely\nwe'll keep using \ntsrc\n in the future.\n\n\nWhy not using libgit2 or similar?\n\u00b6\n\n\npygit2\n now has pre-built wheels for Windows, but not for macOS and Linux.\n\n\nWe prefer to \nnot\n require compiling \nlibgit2\n.\n\n\nAlso, we prefer calling git \"porcelain\" commands, both for readability of the\nsource code and ease of debugging.\n\n\nWhy do you hide which git commands are run?\n\u00b6\n\n\nIt's mainly a matter of not cluttering the output.\nWe take care of keeping the output of \ntsrc\n both concise, readable and\ninformative.\n\n\nThat being said:\n\n\n\n\nIn case a git command fails, we'll display the full command that was run.\n\n\nIf you still need to see \nall\n the git commands that are run, we provide a\n  \n--verbose\n flag, like so: \ntsrc --verbose sync\n\n\n\n\nWhy argparse?\n\u00b6\n\n\nSee \ndocopt v argparse\n, and\n\nplease don't use click\n\n\nWhy YAML?\n\u00b6\n\n\nIt's nice to read and write, and we use the excellent \nruamel.yaml\n which even has round-trip support.\n\n\nAlso, being Python fans, we don't mind the whitespace constraints :P",
             "title": "FAQ"
-        }, 
+        },
         {
-            "location": "/faq/#frequently_asked_questions", 
-            "text": "", 
+            "location": "/faq/#frequently_asked_questions",
+            "text": "",
             "title": "Frequently asked questions"
-        }, 
+        },
         {
-            "location": "/faq/#why_not_python2_support", 
-            "text": "We believe Python2 is an inferior language than Python3, and we use many\nPython3 features to make the code more readable and robust.  Plus  Python2.7 supports ends in 3 years .", 
+            "location": "/faq/#why_not_python2_support",
+            "text": "We believe Python2 is an inferior language than Python3, and we use many\nPython3 features to make the code more readable and robust.  Plus  Python2.7 supports ends in 3 years .",
             "title": "Why not Python2 support?"
-        }, 
+        },
         {
-            "location": "/faq/#why_not_repo", 
-            "text": "We used  repo  for a while, but\nfound that tsrc had both a better command line API and a nicer output.  On a less subjective level:    Good support for Windows (no need for CygWin or anything like that)    GitLab  support (automate working with merge requests)    Lastly, tsrc tries hard to never do any destructive operation or unexpected\n  actions.  For instance,  tsrc  never puts you in a \"detached HEAD\" state,\nnor does automatic rebases. It also never touches dirty repos.  This is achieved by using mostly 'porcelain' commands from git, instead of\nrelying on plumbings internals.    Also (and this matters a lot if you think about contribution):   Comprehensive test suite  Uses PEP8 coding style  Written in Python 3, not Python 2   Here are a few features present in repo that are missing from  tsrc \n(but may be implemented in the future)   Cloning a revision or tag  Cloning several repositories in parallel  Cloning just one or several groups of repositories  Support for other hosting services such as  gerrit  or  github", 
+            "location": "/faq/#why_not_repo",
+            "text": "We used  repo  for a while, but\nfound that tsrc had both a better command line API and a nicer output.  On a less subjective level:    Good support for Windows (no need for CygWin or anything like that)    GitLab  support (automate working with merge requests)    Lastly, tsrc tries hard to never do any destructive operation or unexpected\n  actions.  For instance,  tsrc  never puts you in a \"detached HEAD\" state,\nnor does automatic rebases. It also never touches dirty repos.  This is achieved by using mostly 'porcelain' commands from git, instead of\nrelying on plumbings internals.    Also (and this matters a lot if you think about contribution):   Comprehensive test suite  Uses PEP8 coding style  Written in Python 3, not Python 2   Here are a few features present in repo that are missing from  tsrc \n(but may be implemented in the future)   Cloning several repositories in parallel  Cloning just one or several groups of repositories  Support for other hosting services such as  gerrit  or  github",
             "title": "Why not repo?"
-        }, 
+        },
         {
-            "location": "/faq/#why_not_git-subrepo_mu-repo_or_gr", 
-            "text": "All this projects are fine but did not match our needs:   git-subrepo  squashes commits, and\n  we prefer having normal clones everywhere  mu-repo  is nice and contains an\n  interesting dependency management feature, but currently we do not need this complexity.   In any case, now that the whole team is using  tsrc  all the time, it's likely\nwe'll keep using  tsrc  in the future.", 
+            "location": "/faq/#why_not_git-subrepo_mu-repo_or_gr",
+            "text": "All this projects are fine but did not match our needs:   git-subrepo  squashes commits, and\n  we prefer having normal clones everywhere  mu-repo  is nice and contains an\n  interesting dependency management feature, but currently we do not need this complexity.   In any case, now that the whole team is using  tsrc  all the time, it's likely\nwe'll keep using  tsrc  in the future.",
             "title": "Why not git-subrepo, mu-repo, or gr?"
-        }, 
+        },
         {
-            "location": "/faq/#why_not_using_libgit2_or_similar", 
-            "text": "pygit2  now has pre-built wheels for Windows, but not for macOS and Linux.  We prefer to  not  require compiling  libgit2 .  Also, we prefer calling git \"porcelain\" commands, both for readability of the\nsource code and ease of debugging.", 
+            "location": "/faq/#why_not_using_libgit2_or_similar",
+            "text": "pygit2  now has pre-built wheels for Windows, but not for macOS and Linux.  We prefer to  not  require compiling  libgit2 .  Also, we prefer calling git \"porcelain\" commands, both for readability of the\nsource code and ease of debugging.",
             "title": "Why not using libgit2 or similar?"
-        }, 
+        },
         {
-            "location": "/faq/#why_do_you_hide_which_git_commands_are_run", 
-            "text": "It's mainly a matter of not cluttering the output.\nWe take care of keeping the output of  tsrc  both concise, readable and\ninformative.  That being said:   In case a git command fails, we'll display the full command that was run.  If you still need to see  all  the git commands that are run, we provide a\n   --verbose  flag, like so:  tsrc --verbose sync", 
+            "location": "/faq/#why_do_you_hide_which_git_commands_are_run",
+            "text": "It's mainly a matter of not cluttering the output.\nWe take care of keeping the output of  tsrc  both concise, readable and\ninformative.  That being said:   In case a git command fails, we'll display the full command that was run.  If you still need to see  all  the git commands that are run, we provide a\n   --verbose  flag, like so:  tsrc --verbose sync",
             "title": "Why do you hide which git commands are run?"
-        }, 
+        },
         {
-            "location": "/faq/#why_argparse", 
-            "text": "See  docopt v argparse , and please don't use click", 
+            "location": "/faq/#why_argparse",
+            "text": "See  docopt v argparse , and please don't use click",
             "title": "Why argparse?"
-        }, 
+        },
         {
-            "location": "/faq/#why_yaml", 
-            "text": "It's nice to read and write, and we use the excellent  ruamel.yaml  which even has round-trip support.  Also, being Python fans, we don't mind the whitespace constraints :P", 
+            "location": "/faq/#why_yaml",
+            "text": "It's nice to read and write, and we use the excellent  ruamel.yaml  which even has round-trip support.  Also, being Python fans, we don't mind the whitespace constraints :P",
             "title": "Why YAML?"
-        }, 
+        },
         {
-            "location": "/changelog/", 
-            "text": "Changelog\n\n\n\n\n\n\nSupport for specifying custom branches in the manifest\n\n\nSupport for specifying fixed refs (tags or commit) in the manifest.\n\n\n\n\nNew syntax is:\n\n\nrepos:\n  - src: foo\n    url: git@gitlab.com:proj/foo\n    branch: next\n\n  - src: bar\n    url: git@gitlab.com:proj/bar\n    branch: master\n    ref: v0.1\n\n\n\n\nNote that \nbranch\n is still required.\n\n\nv0.1.4 (2017-08-04)\n\n\nSupport for Python 3.3, 3.4, 3.5 and 3.6\n\n\nv0.1.1 (2017-08-02)\n\n\nFirst public release", 
+            "location": "/changelog/",
+            "text": "Changelog\n\u00b6\n\n\nv0.2.0 (2017-08-09)\n\u00b6\n\n\n\n\nSupport for specifying custom branches in the manifest\n\n\nSupport for specifying fixed refs (tags or hashes) in the manifest\n\n\n\n\nNew syntax is:\n\n\nrepos:\n  - src: foo\n    url: git@gitlab.com:proj/foo\n    branch: next\n\n  - src: bar\n    url: git@gitlab.com:proj/bar\n    branch: master\n    ref: v0.1\n\n\n\n\nNote that \nbranch\n is still required.\n\n\n\n\nYou can now skip the \ndest\n part of the \ncopy\n section if \nsrc\n and \ndest\n are\n  equal:\n\n\n\n\ncopy:\n  - src:foo\n\n# same thing as\ncopy:\n - src: foo\n   dest: foo\n\n\n\n\nv0.1.4 (2017-08-04)\n\u00b6\n\n\nSupport for Python 3.3, 3.4, 3.5 and 3.6\n\n\nv0.1.1 (2017-08-02)\n\u00b6\n\n\nFirst public release",
             "title": "Changelog"
-        }, 
+        },
         {
-            "location": "/changelog/#changelog", 
-            "text": "", 
+            "location": "/changelog/#changelog",
+            "text": "",
             "title": "Changelog"
-        }, 
+        },
         {
-            "location": "/changelog/#v014_2017-08-04", 
-            "text": "Support for Python 3.3, 3.4, 3.5 and 3.6", 
+            "location": "/changelog/#v020_2017-08-09",
+            "text": "Support for specifying custom branches in the manifest  Support for specifying fixed refs (tags or hashes) in the manifest   New syntax is:  repos:\n  - src: foo\n    url: git@gitlab.com:proj/foo\n    branch: next\n\n  - src: bar\n    url: git@gitlab.com:proj/bar\n    branch: master\n    ref: v0.1  Note that  branch  is still required.   You can now skip the  dest  part of the  copy  section if  src  and  dest  are\n  equal:   copy:\n  - src:foo\n\n# same thing as\ncopy:\n - src: foo\n   dest: foo",
+            "title": "v0.2.0 (2017-08-09)"
+        },
+        {
+            "location": "/changelog/#v014_2017-08-04",
+            "text": "Support for Python 3.3, 3.4, 3.5 and 3.6",
             "title": "v0.1.4 (2017-08-04)"
-        }, 
+        },
         {
-            "location": "/changelog/#v011_2017-08-02", 
-            "text": "First public release", 
+            "location": "/changelog/#v011_2017-08-02",
+            "text": "First public release",
             "title": "v0.1.1 (2017-08-02)"
         }
     ]

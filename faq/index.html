@@ -46,99 +46,83 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
           
-            <li>
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Getting started</span>
     <ul class="subnav">
-    <li><span>Getting started</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../guide/basics/">Basic usage</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../guide/merge_requests/">Handling GitLab merge requests</a>
-        
-    </li>
-
-        
+                <li class="">
+                    
+    <a class="" href="../guide/basics/">Basic usage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../guide/merge_requests/">Handling GitLab merge requests</a>
+                </li>
     </ul>
-<li>
+	    </li>
           
-            <li>
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference</span>
     <ul class="subnav">
-    <li><span>Reference</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../ref/cli/">Comand line usage</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../ref/formats/">Configuration files formats</a>
-        
-    </li>
-
-        
+                <li class="">
+                    
+    <a class="" href="../ref/cli/">Comand line usage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ref/formats/">Configuration files formats</a>
+                </li>
     </ul>
-<li>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../contrib/">Contributing</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../contrib/">Contributing</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">FAQ</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">FAQ</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#frequently_asked_questions">Frequently asked questions</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_not_python2_support">Why not Python2 support?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_not_repo">Why not repo?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_not_using_libgit2_or_similar">Why not using libgit2 or similar?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_argparse">Why argparse?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why_yaml">Why YAML?</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l2"><a href="#frequently_asked_questions">Frequently asked questions</a></li>
+    
+        <ul>
         
-    </li>
-<li>
+            <li><a class="toctree-l3" href="#why_not_python2_support">Why not Python2 support?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_not_repo">Why not repo?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_not_git_submodule">Why not git submodule?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_not_using_libgit2_or_similar">Why not using libgit2 or similar?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_argparse">Why argparse?</a></li>
+        
+            <li><a class="toctree-l3" href="#why_yaml">Why YAML?</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../changelog/">Changelog</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../changelog/">Changelog</a>
+	    </li>
           
         </ul>
       </div>
@@ -220,6 +204,24 @@ relying on plumbings internals.</p>
 </ul>
 <p>In any case, now that the whole team is using <code>tsrc</code> all the time, it's likely
 we'll keep using <code>tsrc</code> in the future.</p>
+<h2 id="why_not_git_submodule">Why not git submodule?<a class="headerlink" href="#why_not_git_submodule" title="Permanent link">&para;</a></h2>
+<p>It's all about workflow.</p>
+<p>With <code>git-submodule</code>, you have a 'parent' repository and you freeze the state of
+the 'children' repositories to a specific commit.</p>
+<p>It's useful when you want to re-build a library you've forked when you build
+your main project, or when you have a library or build tools you want to
+factorize across repositories: this means that each 'parent' repository can
+have its children on any commit they want.</p>
+<p>With <code>tsrc</code>, all repositories are equal, and what you do instead is to make sure
+all the branches (or tags) are consistent across repositories.</p>
+<p>For instance, if you have <code>foo</code> and <code>bar</code>, you are going to make sure the
+'master' branch of <code>foo</code> is always compatible to the 'master' branch of <code>bar</code>.</p>
+<p>Or if you want to go back to the state of the '0.42' release, you will run:
+<code>tsrc foreach -- git reset --hard v0.42</code>.</p>
+<p>Note that since <code>tsrc 0.2</code> you can also freeze the commits of some of the
+repositories.</p>
+<p>Last but not least, with <code>tsrc</code> you do everything with <code>tsrc init</code> and <code>tsrc
+sync</code>, which is a simpler command line API than <code>git submodule</code>.</p>
 <h2 id="why_not_using_libgit2_or_similar">Why not using libgit2 or similar?<a class="headerlink" href="#why_not_using_libgit2_or_similar" title="Permanent link">&para;</a></h2>
 <p><code>pygit2</code> now has pre-built wheels for Windows, but not for macOS and Linux.</p>
 <p>We prefer to <em>not</em> require compiling <code>libgit2</code>.</p>

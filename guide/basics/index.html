@@ -172,6 +172,7 @@ $ tsrc init git@gitlab.local:acme/manifest.git
 
 <p>In this example:</p>
 <ul>
+<li>A clone of the manifest repository will be created in a hidden <code>.tsrc/manifest</code> folder.</li>
 <li><code>foo</code> will be cloned in <code>&lt;work&gt;/foo</code> using <code>git@gitlab.com/acme/foo.git</code> origin url.</li>
 <li>Similarly, <code>bar</code> will be cloned in <code>&lt;work&gt;/bar</code> using <code>git@gitlab.com:acme/bar.git</code></li>
 </ul>
@@ -188,6 +189,12 @@ $ tsrc init git@gitlab.local:acme/manifest.git
   <code>rebase</code> or <code>merge</code></li>
 <li>Ditto if there is no remote tracking branch</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Like <code>git</code>, tsrc will walk up the folders hierarchy looking for a <code>.tsrc</code>
+folder, which means you can run tsrc commands anywhere in your workspace, not
+just at the top.</p>
+</div>
               
             </div>
           </div>

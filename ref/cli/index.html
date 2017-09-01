@@ -85,6 +85,8 @@
         
             <li><a class="toctree-l4" href="#general">General</a></li>
         
+            <li><a class="toctree-l4" href="#global_options">Global options</a></li>
+        
             <li><a class="toctree-l4" href="#usage">Usage</a></li>
         
         </ul>
@@ -164,9 +166,18 @@ probably more so than this documentation :)</p>
 $ tsrc init MANIFEST_URL
 </code></pre>
 
+<h2 id="global_options">Global options<a class="headerlink" href="#global_options" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>--verbose</dt>
+<dd>show verbose messages</dd>
+<dt>-q.--quiet</dt>
+<dd>hide everything except errors and warnings</dd>
+<dt>--color [always|never|auto]</dt>
+<dd>control using color for messages (default 'auto', on if stdout is a terminal)</dd>
+</dl>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <dl>
-<dt>tsrc init MANIFEST_URL</dt></dt>
+<dt>tsrc init MANIFEST_URL</dt>
 <dd>
 <p>Initializes a new workspace.</p>
 <p>MANIFEST_URL should be a git URL containing a valid

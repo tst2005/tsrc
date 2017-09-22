@@ -102,6 +102,8 @@
     
         <ul>
         
+            <li><a class="toctree-l3" href="#v030">v0.3.0</a></li>
+        
             <li><a class="toctree-l3" href="#v024_2017-07-13">v0.2.4 (2017-07-13)</a></li>
         
             <li><a class="toctree-l3" href="#v023_2017-09-01">v0.2.3 (2017-09-01)</a></li>
@@ -155,6 +157,21 @@
             <div class="section">
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
+<h2 id="v030">v0.3.0<a class="headerlink" href="#v030" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>Breaking change</em>: Add support for groups (#30). Reported by @arnaudgelas</li>
+</ul>
+<h3 id="upgrading_from_v024">Upgrading from v0.2.4<a class="headerlink" href="#upgrading_from_v024" title="Permanent link">&para;</a></h3>
+<p>To upgrade from an older version of <code>tsrc</code>, you should re-run <code>tsrc init</code> with the correct url:</p>
+<pre><code class="console"># Check manifest URL:
+$ cd &lt;workspace&gt;/.tsrc/manifest
+$ git remote get-url origin
+# Note the url, for instance ssh://git@example.com:manifest.git
+$ cd &lt;workspace&gt;
+$ tsrc init &lt;manifest-url&gt;
+</code></pre>
+
+<p>This is required to create the <code>&lt;workspace&gt;/.tsrc/manifest.yml</code> file which is later used by <code>tsrc sync</code> and other commands.</p>
 <h2 id="v024_2017-07-13">v0.2.4 (2017-07-13)<a class="headerlink" href="#v024_2017-07-13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>tsrc push --assignee</code>: fix when there are more than 50 GitLab users (#25). Reported by @arnaudgelas</li>

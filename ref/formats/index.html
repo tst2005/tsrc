@@ -87,6 +87,8 @@
         
             <li><a class="toctree-l4" href="#manifest_format">Manifest format</a></li>
         
+            <li><a class="toctree-l4" href="#groups">groups</a></li>
+        
             <li><a class="toctree-l4" href="#tsrcyml_format">tsrc.yml format</a></li>
         
         </ul>
@@ -161,6 +163,9 @@ syntax</p>
 <li>
 <p><code>gitlab.url</code> (optional): HTTP URL of the GitLab instance</p>
 </li>
+<li>
+<p><code>groups</code> (optional): list of groups</p>
+</li>
 </ul>
 <h3 id="repos">repos<a class="headerlink" href="#repos" title="Permanent link">&para;</a></h3>
 <p>Each repository is also a dictionary, containing:</p>
@@ -195,6 +200,39 @@ syntax</p>
 <p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>,
 (using <code>develop</code> branch), <code>foo.txt</code> will be copied from <code>proj1/foo/foo.txt</code> to
 <code>&lt;workspace&gt;/top.txt</code>.</p>
+<h2 id="groups">groups<a class="headerlink" href="#groups" title="Permanent link">&para;</a></h2>
+<p>The <code>groups</code> section lists the groups by name. They should contain a <code>repos</code> field
+containing a list of repositories (which should match the sources of the repositories
+defined in the <code>repos</code>  section.</p>
+<p>The groups can optionally include other groups, with a <code>includes</code> field which should be
+a list of existing group names.</p>
+<p>The group named <code>default</code>, if it exists, will be used to know which repositories to clone
+when using <code>tsrc init</code> and the <code>--group</code> command line argument is not used.</p>
+<p>Example:</p>
+<pre><code class="yaml">repos:
+  - src: a
+    url: ..
+  - src: b
+    url: ..
+  - src: bar
+    url: ..
+  - src: baz
+    url: ..
+
+groups:
+  default:
+    repos: [a, b]
+  foo:
+    repos: [bar, baz]
+    includes: [default]
+</code></pre>
+
+<pre><code class="console">$ tsrc init &lt;manifest_url&gt;
+# Clones a, b
+$ tsrc init &lt;manifest_url&gt; --group foo
+# Clones a, b, bar and baz
+</code></pre>
+
 <h2 id="tsrcyml_format">tsrc.yml format<a class="headerlink" href="#tsrcyml_format" title="Permanent link">&para;</a></h2>
 <p><code>tsrc.yml</code> must be written in <code>XDG_CONFIG_HOME</code> (or <code>~/.config/</code>).</p>
 <p>We use GitLab authentication with token, like so:</p>

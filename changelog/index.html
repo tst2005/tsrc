@@ -158,9 +158,8 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <h2 id="v030_2017-09-22">v0.3.0 (2017-09-22)<a class="headerlink" href="#v030_2017-09-22" title="Permanent link">&para;</a></h2>
-<ul>
-<li><em>Breaking change</em>: Add support for groups (#30). Reported by @arnaudgelas</li>
-</ul>
+<p><em>Breaking change</em>: Add support for groups (#30). Reported by @arnaudgelas.</p>
+<p>See the <a href="../ref/formats#groups">dedicated section about manifest format</a> for details.</p>
 <h3 id="upgrading_from_v024">Upgrading from v0.2.4<a class="headerlink" href="#upgrading_from_v024" title="Permanent link">&para;</a></h3>
 <p>To upgrade from an older version of <code>tsrc</code>, you should re-run <code>tsrc init</code> with the correct url:</p>
 <pre><code class="console"># Check manifest URL:
@@ -207,7 +206,7 @@ $ tsrc init &lt;manifest-url&gt;
   - src: bar
     url: git@gitlab.com:proj/bar
     branch: master
-    ref: v0.1
+    fixed_ref: v0.1
 </code></pre>
 
 <p>Note that <code>branch</code> is still required.</p>

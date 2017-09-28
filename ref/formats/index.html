@@ -185,14 +185,14 @@ syntax</p>
 </ul>
 </li>
 <li>
-<p><code>copyfiles</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</p>
+<p><code>copy</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</p>
 </li>
 </ul>
 <pre><code>repos:
   src: foo
   url: gitlab:proj1/foo
   branch: develop
-  copyfiles:
+  copy:
     - src: foo.txt
       dest: top.txt
 </code></pre>

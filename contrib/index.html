@@ -225,6 +225,22 @@ if len(errors) == 0:
 </code></pre>
 
 <ul>
+<li>Do not use <code>+</code> to build strings. Use <code>format()</code>, <code>%</code> instead, or
+  "f-strings" if you only want the code to work with Python &gt;= 3.6:</li>
+</ul>
+<pre><code class="python"># Yes
+message = &quot;Welcome, {}!&quot;.format(name)
+message = &quot;Welcome, %s!&quot; % name
+message = f&quot;Welcome {name}!&quot;
+
+# No
+message = &quot;Welcome, &quot; + name + &quot;!&quot;
+
+# Okayish
+with_ext = name + &quot;.txt&quot;
+</code></pre>
+
+<ul>
 <li>Use <code>textwrap.dedent()</code> to build nice-looking multi-lines strings:</li>
 </ul>
 <pre><code class="python"># Yes

@@ -22,7 +22,7 @@ def commit_string(number):
 
 
 def describe_position(git_status):
-    res = []
+    res = list()
     if git_status.ahead != 0:
         up = ui.Symbol("↑", "+")
         n_commits = commit_string(git_status.ahead)
@@ -37,15 +37,18 @@ def describe_position(git_status):
 
 
 def describe_dirty(git_status):
-    res = []
+    res = list()
     if git_status.dirty:
         res += [ui.red, "(dirty)"]
     return res
 
 
 def describe(git_status):
-    # Return a list of tokens suitable for ui.info()
-    res = []
+    """ Return a list of tokens from the `git_status` suitable
+    for ui.info()
+
+    """
+    res = list()
     res += describe_branch(git_status)
     res += describe_position(git_status)
     res += describe_dirty(git_status)

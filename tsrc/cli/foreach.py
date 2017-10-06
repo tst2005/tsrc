@@ -23,7 +23,13 @@ class CmdRunner(tsrc.executor.Task):
         return repo.src
 
     def description(self):
-        return "Running `%s` on every repo" % self.cmd_as_str
+        message = "Running `%s` on every repo" % self.cmd_as_str
+        if self.groups:
+            if len(self.groups) == 1:
+                message += "of group " + self.group[0]
+            else:
+                message += "of groups " + ", ".join(self.groups)
+        return message
 
     def process(self, repo):
         ui.info(repo.src, "\n",

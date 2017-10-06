@@ -72,3 +72,16 @@ def test_foreach_shell(tsrc_cli, git_server, message_recorder):
     cmd.append("doc")
     tsrc_cli.run("foreach", "-c", " ".join(cmd))
     assert message_recorder.find("`%s`" % " ".join(cmd))
+
+
+def test_foreach_use_subgroup(tsrc_cli, git_server, message_recorder):
+    git_server.add_group("top", ["one", "two"], includes=["bottom"])
+    git_server.add_group("bottom", ["three"])
+    tsrc_cli.run("init", "-g", "top", git_server.manifest_url)
+
+    message_recorder.reset()
+    cmd = get_cmd_for_foreach_test()
+    tsrc_cli.run("foreach", "-g", "bottom", "--", *cmd)
+
+    assert message_recorder.find("three")
+    assert not message_recorder.find("one")

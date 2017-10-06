@@ -70,6 +70,11 @@ def main_wrapper(main_func):
     return wrapped
 
 
+def add_group_args(parser):
+    parser.add_argument("-g", "--group", action="append", dest="groups")
+    parser.add_argument("--all", action="store_true", dest="all")
+
+
 @main_wrapper
 def main(args=None):
     parser = argparse.ArgumentParser()
@@ -85,6 +90,7 @@ def main(args=None):
     subparsers.add_parser("version")
 
     foreach_parser = workspace_subparser(subparsers, "foreach")
+    add_group_args(foreach_parser)
     foreach_parser.add_argument("cmd", nargs="*")
     foreach_parser.add_argument("-c", dest="shell", action="store_true")
     foreach_parser.epilog = textwrap.dedent("""\
@@ -101,6 +107,7 @@ def main(args=None):
     init_parser.add_argument("manifest_url", nargs="?")
     init_parser.add_argument("-b", "--branch")
     init_parser.add_argument("-g", "--group", action="append", dest="groups")
+    init_parser.add_argument("--all", action="store_true")
     init_parser.set_defaults(branch="master")
 
     log_parser = workspace_subparser(subparsers, "log")

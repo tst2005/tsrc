@@ -24,13 +24,15 @@ class ManifestHandler():
         self.data["repos"].append({"url": str(url), "src": src})
         self.push(message="add %s" % src)
 
-    def configure_group(self, name, repos):
+    def configure_group(self, name, repos, *, includes=None):
         groups = self.data.get("groups")
         if not groups:
             self.data["groups"] = dict()
             groups = self.data["groups"]
         groups[name] = dict()
         groups[name]["repos"] = repos
+        if includes:
+            groups[name]["includes"] = includes
         self.push(message="add %s group" % name)
 
     def configure_gitlab(self, *, url):
@@ -116,10 +118,10 @@ class GitServer():
             self.manifest.add_repo(name, url)
         return url
 
-    def add_group(self, group_name, repos):
+    def add_group(self, group_name, repos, *, includes=None):
         for repo in repos:
             self.add_repo(repo)
-        self.manifest.configure_group(group_name, repos)
+        self.manifest.configure_group(group_name, repos, includes=includes)
 
     def push_file(self, name, file_path, *,
                   contents=None, message=None):

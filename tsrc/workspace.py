@@ -41,7 +41,8 @@ class LocalManifest:
         return config.get("groups")
 
     def get_repos(self):
-        return self.manifest.get_repos(groups=self.active_groups)
+        config = self.load_config()
+        return self.manifest.get_repos(groups=config.get("groups"), all_=config.get("all_repos"))
 
     def load(self):
         yml_path = self.clone_path.joinpath("manifest.yml")
@@ -60,13 +61,14 @@ class LocalManifest:
     def get_url(self, src):
         return self.manifest.get_url(src)
 
-    def configure(self, url=None, branch="master", tag=None, groups=None):
+    def configure(self, url=None, branch="master", tag=None,
+                  groups=None, all_repos=False):
         if not self.cfg_path.exists() and not url:
             raise tsrc.Error("manifest URL is required when creating a new workspace")
         if self.cfg_path.exists() and not url:
             url = self.load_config()["url"]
         self._ensure_git_state(url, branch=branch, tag=tag)
-        self.save_config(url=url, branch=branch, tag=tag, groups=groups)
+        self.save_config(url=url, branch=branch, tag=tag, groups=groups, all_repos=all_repos)
 
     def update(self):
         ui.info_2("Updating manifest")
@@ -79,7 +81,7 @@ class LocalManifest:
         cmd = ("reset", "--hard", "@{u}")
         tsrc.git.run_git(self.clone_path, *cmd)
 
-    def save_config(self, url, branch="master", tag=None, groups=None):
+    def save_config(self, url, branch="master", tag=None, groups=None, all_repos=False):
         config = dict()
         config["url"] = url
         config["branch"] = branch
@@ -87,6 +89,8 @@ class LocalManifest:
             config["tag"] = tag
         if groups:
             config["groups"] = groups
+        if all_repos:
+            config["all_repos"] = all_repos
         with self.cfg_path.open("w") as fp:
             ruamel.yaml.dump(config, fp)
 
@@ -96,6 +100,7 @@ class LocalManifest:
             "url": str,
             schema.Optional("tag"): str,
             schema.Optional("groups"): [str],
+            schema.Optional("all_repos"): bool,
         })
 
         return tsrc.config.parse_config_file(self.cfg_path, manifest_schema)
@@ -141,8 +146,10 @@ class Workspace():
     def get_gitlab_url(self):
         return self.local_manifest.get_gitlab_url()
 
-    def configure_manifest(self, url=None, *, branch="master", tag=None, groups=None):
-        self.local_manifest.configure(url=url, branch=branch, tag=tag, groups=groups)
+    def configure_manifest(self, url=None, *, branch="master", tag=None,
+                           groups=None, all_repos=False):
+        self.local_manifest.configure(url=url, branch=branch, tag=tag,
+                                      groups=groups, all_repos=all_repos)
 
     def update_manifest(self):
         self.local_manifest.update()

@@ -102,6 +102,8 @@
         
             <li><a class="toctree-l3" href="#pet_peeves">Pet peeves</a></li>
         
+            <li><a class="toctree-l3" href="#doc_strings_and_comments">Doc strings and comments</a></li>
+        
             <li><a class="toctree-l3" href="#collections">Collections</a></li>
         
             <li><a class="toctree-l3" href="#functions">Functions</a></li>
@@ -289,6 +291,11 @@ else:
 a = &quot;ok&quot; if foo else &quot;nope&quot;
 </code></pre>
 
+<h2 id="doc_strings_and_comments">Doc strings and comments<a class="headerlink" href="#doc_strings_and_comments" title="Permanent link">&para;</a></h2>
+<p>First off, bad comments are worse that not comments.</p>
+<p>However by default, <code>pylint</code> mandates that all public functions and methods (those that do not start with underscore) have a doc string. This is useful when you write a library, but for the code in <code>tsrc</code> this is useless and so we disable this rule in our <code>pylintrc</code>.</p>
+<p>Also note that you should use comments to explain <strong>why</strong>, never <strong>what</strong>. If the <strong>what</strong> is no clear, it means the behavior of the function or method cannot be easily understood by reading implementation, and so you should fix the implementation instead.</p>
+<p>In conclusion, use comments and doc strings sparingly: that way, they will not rot and they will stay useful.</p>
 <h2 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use .extend() instead of += to concatenate lists:</li>

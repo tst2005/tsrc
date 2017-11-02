@@ -94,6 +94,9 @@
     <li class="toctree-l2"><a href="#adding_new_features">Adding new features</a></li>
     
 
+    <li class="toctree-l2"><a href="#checking_your_changes">Checking your changes</a></li>
+    
+
     <li class="toctree-l2"><a href="#code_manifesto">Code Manifesto</a></li>
     
         <ul>
@@ -181,7 +184,7 @@
 </ul>
 <p>Doing so will ensure we can investigate your bug right away.</p>
 <h1 id="adding_new_features">Adding new features<a class="headerlink" href="#adding_new_features" title="Permanent link">&para;</a></h1>
-<p>You are free to open a pull request on Github for any feature you'd like.</p>
+<p>You are free to open a pull request on GitHub for any feature you'd like.</p>
 <p>Note that for your merge request to be accepted, we'll ask that</p>
 <ul>
 <li>You follow indications from the <a href="#code_manifesto">code manifesto</a></li>
@@ -192,6 +195,22 @@
 <p>See the <a href="https://github.com/TankerApp/tsrc/blob/master/.travis.yml">.travis.yml file</a>
 to see what exactly what commands are run and the Python versions we
 support.</p>
+<h1 id="checking_your_changes">Checking your changes<a class="headerlink" href="#checking_your_changes" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Create a virtualenv</li>
+<li>Activate it</li>
+<li>Install development and documentation dependencies:</li>
+</ul>
+<pre><code class="console">$ pip install -r dev-requirements.txt
+$ pip install -r doc-requirements.txt
+</code></pre>
+
+<ul>
+<li>Finally, run:</li>
+</ul>
+<pre><code class="console">$ python ci/ci.py
+</code></pre>
+
 <h1 id="code_manifesto">Code Manifesto<a class="headerlink" href="#code_manifesto" title="Permanent link">&para;</a></h1>
 <h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
 <p>We use <code>pycodestyle</code> to enforce a coding style matching <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>.</p>
@@ -447,7 +466,7 @@ class AbstractFoo(metaclass=abc.ABCMeta):
 # No
 class AbstractFoo:
      def foo(self):
-        raise NotImplementedError()ython
+        raise NotImplementedError()
 
 </code></pre>
 

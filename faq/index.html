@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>FAQ - Tanker documentation</title>
+  <title>FAQ - tsrc documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Tanker documentation</a>
+        <a href=".." class="icon icon-home"> tsrc documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -98,27 +98,28 @@
     <a class="current" href="./">FAQ</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#frequently_asked_questions">Frequently asked questions</a></li>
+    <li class="toctree-l2"><a href="#why_not_python2_support">Why not Python2 support?</a></li>
     
-        <ul>
-        
-            <li><a class="toctree-l3" href="#why_not_python2_support">Why not Python2 support?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_not_repo">Why not repo?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_not_git_submodule">Why not git submodule?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_not_using_libgit2_or_similar">Why not using libgit2 or similar?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_argparse">Why argparse?</a></li>
-        
-            <li><a class="toctree-l3" href="#why_yaml">Why YAML?</a></li>
-        
-        </ul>
+
+    <li class="toctree-l2"><a href="#why_not_repo">Why not repo?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_not_git_submodule">Why not git submodule?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_not_using_libgit2_or_similar">Why not using libgit2 or similar?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_argparse">Why argparse?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#why_yaml">Why YAML?</a></li>
     
 
     </ul>
@@ -139,7 +140,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Tanker documentation</a>
+        <a href="..">tsrc documentation</a>
       </nav>
 
       
@@ -161,12 +162,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="frequently_asked_questions">Frequently asked questions<a class="headerlink" href="#frequently_asked_questions" title="Permanent link">&para;</a></h1>
-<h2 id="why_not_python2_support">Why not Python2 support?<a class="headerlink" href="#why_not_python2_support" title="Permanent link">&para;</a></h2>
+                <h1 id="why_not_python2_support">Why not Python2 support?<a class="headerlink" href="#why_not_python2_support" title="Permanent link">&para;</a></h1>
 <p>We believe Python2 is an inferior language than Python3, and we use many
 Python3 features to make the code more readable and robust.</p>
 <p>Plus <a href="https://www.python.org/dev/peps/pep-0373/#id2">Python2.7 supports ends in 2020</a>.</p>
-<h2 id="why_not_repo">Why not repo?<a class="headerlink" href="#why_not_repo" title="Permanent link">&para;</a></h2>
+<h1 id="why_not_repo">Why not repo?<a class="headerlink" href="#why_not_repo" title="Permanent link">&para;</a></h1>
 <p>We used <a href="https://android.googlesource.com/tools/repo/">repo</a> for a while, but
 found that tsrc had both a better command line API and a nicer output.</p>
 <p>On a less subjective level:</p>
@@ -198,7 +198,7 @@ relying on plumbings internals.</p>
 <li>Cloning several repositories in parallel</li>
 <li>Support for other hosting services such as <code>gerrit</code> or <code>github</code></li>
 </ul>
-<h2 id="why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?<a class="headerlink" href="#why_not_git-subrepo_mu-repo_or_gr" title="Permanent link">&para;</a></h2>
+<h1 id="why_not_git-subrepo_mu-repo_or_gr">Why not git-subrepo, mu-repo, or gr?<a class="headerlink" href="#why_not_git-subrepo_mu-repo_or_gr" title="Permanent link">&para;</a></h1>
 <p>All this projects are fine but did not match our needs:</p>
 <ul>
 <li><a href="https://github.com/ingydotnet/git-subrepo">git-subrepo</a> squashes commits, and
@@ -208,7 +208,7 @@ relying on plumbings internals.</p>
 </ul>
 <p>In any case, now that the whole team is using <code>tsrc</code> all the time, it's likely
 we'll keep using <code>tsrc</code> in the future.</p>
-<h2 id="why_not_git_submodule">Why not git submodule?<a class="headerlink" href="#why_not_git_submodule" title="Permanent link">&para;</a></h2>
+<h1 id="why_not_git_submodule">Why not git submodule?<a class="headerlink" href="#why_not_git_submodule" title="Permanent link">&para;</a></h1>
 <p>It's all about workflow.</p>
 <p>With <code>git-submodule</code>, you have a 'parent' repository and you freeze the state of
 the 'children' repositories to a specific commit.</p>
@@ -226,12 +226,12 @@ all the branches (or tags) are consistent across repositories.</p>
 repositories.</p>
 <p>Last but not least, with <code>tsrc</code> you do everything with <code>tsrc init</code> and <code>tsrc
 sync</code>, which is a simpler command line API than <code>git submodule</code>.</p>
-<h2 id="why_not_using_libgit2_or_similar">Why not using libgit2 or similar?<a class="headerlink" href="#why_not_using_libgit2_or_similar" title="Permanent link">&para;</a></h2>
+<h1 id="why_not_using_libgit2_or_similar">Why not using libgit2 or similar?<a class="headerlink" href="#why_not_using_libgit2_or_similar" title="Permanent link">&para;</a></h1>
 <p><code>pygit2</code> now has pre-built wheels for Windows, but not for macOS and Linux.</p>
 <p>We prefer to <em>not</em> require compiling <code>libgit2</code>.</p>
 <p>Also, we prefer calling git "porcelain" commands, both for readability of the
 source code and ease of debugging.</p>
-<h2 id="why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?<a class="headerlink" href="#why_do_you_hide_which_git_commands_are_run" title="Permanent link">&para;</a></h2>
+<h1 id="why_do_you_hide_which_git_commands_are_run">Why do you hide which git commands are run?<a class="headerlink" href="#why_do_you_hide_which_git_commands_are_run" title="Permanent link">&para;</a></h1>
 <p>It's mainly a matter of not cluttering the output.
 We take care of keeping the output of <code>tsrc</code> both concise, readable and
 informative.</p>
@@ -241,10 +241,10 @@ informative.</p>
 <li>If you still need to see <em>all</em> the git commands that are run, we provide a
   <code>--verbose</code> flag, like so: <code>tsrc --verbose sync</code></li>
 </ul>
-<h2 id="why_argparse">Why argparse?<a class="headerlink" href="#why_argparse" title="Permanent link">&para;</a></h2>
+<h1 id="why_argparse">Why argparse?<a class="headerlink" href="#why_argparse" title="Permanent link">&para;</a></h1>
 <p>See <a href="https://dmerej.info/blog/post/docopt-v-argparse/">docopt v argparse</a>, and
 <a href="http://xion.io/post/programming/python-dont-use-click.html">please don't use click</a></p>
-<h2 id="why_yaml">Why YAML?<a class="headerlink" href="#why_yaml" title="Permanent link">&para;</a></h2>
+<h1 id="why_yaml">Why YAML?<a class="headerlink" href="#why_yaml" title="Permanent link">&para;</a></h1>
 <p>It's nice to read and write, and we use the excellent <a href="https://yaml.readthedocs.io/en/latest/">ruamel.yaml</a> which even has round-trip support.</p>
 <p>Also, being Python fans, we don't mind the whitespace constraints :P</p>
               

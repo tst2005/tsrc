@@ -266,6 +266,18 @@ else:
 a = &quot;ok&quot; if foo else &quot;nope&quot;
 </code></pre>
 
+<ul>
+<li>Use <code>if ... in ...</code> when you can:</li>
+</ul>
+<pre><code class="python"># Yes
+if value in [&quot;option1&quot;, &quot;option2&quot;]:
+   ...
+
+# No
+if value == &quot;option1&quot; or value == &quot;option2&quot;
+  ...
+</code></pre>
+
 <h1 id="doc_strings_and_comments">Doc strings and comments<a class="headerlink" href="#doc_strings_and_comments" title="Permanent link">&para;</a></h1>
 <p>First off, bad comments are worse that not comments.</p>
 <p>However by default, <code>pylint</code> mandates that all public functions and methods (those that do not start with underscore) have a doc string. This is useful when you write a library, but for the code in <code>tsrc</code> this is useless and so we disable this rule in our <code>pylintrc</code>.</p>

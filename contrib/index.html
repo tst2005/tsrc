@@ -178,30 +178,23 @@ to see what exactly what commands are run and the Python versions we
 support.</p>
 <h1 id="checking_your_changes">Checking your changes<a class="headerlink" href="#checking_your_changes" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Create a virtualenv</li>
-<li>Activate it</li>
+<li>Install <a href="https://docs.pipenv.org/">pipenv</a>.</li>
 <li>Install development and documentation dependencies:</li>
 </ul>
-<pre><code class="console">$ pip install -r dev-requirements.txt
-$ pip install -r doc-requirements.txt
+<pre><code class="console">$ pipenv install --dev
 </code></pre>
 
+<ul>
+<li>Run <code>setup.py develop</code> at least once:</li>
+</ul>
+<pre><code>$ pypenv run python setup.py develop
+</code></pre>
+
+<p>(you should re-run this command every time the <code>setup.py</code> file changes).</p>
 <ul>
 <li>Finally, run:</li>
 </ul>
-<pre><code class="console">$ python ci/ci.py
-</code></pre>
-
-<ul>
-<li>Use <code>if ... in ...</code> when you can:</li>
-</ul>
-<pre><code class="python"># Yes
-if value in [&quot;option1&quot;, &quot;option2&quot;]:
-   ...
-
-# No
-if value == &quot;option1&quot; or value == &quot;option2&quot;
-  ...
+<pre><code class="console">$ pipenv run python ci/ci.py
 </code></pre>
               
             </div>

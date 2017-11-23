@@ -179,32 +179,46 @@ syntax</p>
 <li><code>url</code> (required): URL to use when cloning the repository (usually using ssh)</li>
 <li><code>branch</code> (optional): The branch to use when cloning the repository (defaults
   to <code>master</code>)</li>
-<li>
-<p><code>fixed_ref</code> (optional): Can be a tag like <code>v0.1</code> or a hash like <code>0ab12ef</code>.
-   If <code>fixed_ref</code> is set:</p>
-<ul>
-<li>When running <code>tsrc init</code>: Project will be cloned with the given branch, and then reset to
-    the given ref.</li>
-<li>When running <code>tsrc sync</code>: If the project is clean, project will be reset
-    to the given ref, else a warning message will be printed.</li>
+<li><code>tag</code> (optional):<ul>
+<li>When running <code>tsrc init</code>: Project will be cloned at the provided tag.</li>
+<li>When running <code>tsrc sync</code>:  If the project is clean, project will be reset
+    to the given tag, else a warning message will be printed.</li>
 </ul>
 </li>
-<li>
-<p><code>copy</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</p>
+<li><code>sha1</code> (optional):<ul>
+<li>When running <code>tsrc init</code>: Project will be cloned, and then reset to the given sha1.</li>
+<li>When running <code>tsrc sync</code>:  If the project is clean, project will be reset
+    to the given sha1, else a warning message will be printed.</li>
+</ul>
 </li>
+<li><code>copy</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</li>
 </ul>
 <pre><code>repos:
-  src: foo
-  url: gitlab:proj1/foo
-  branch: develop
-  copy:
-    - src: foo.txt
-      dest: top.txt
+  - src: foo
+    url: gitlab:proj1/foo
+    branch: next
+
+  - src: bar
+    url: gitlab:proj1/bar
+    branch: master
+    sha1: ad2b68539c78e749a372414165acdf2a1bb68203
+
+  - src: app
+    url: gitlab:proj1/app
+    tag: v0.1
+    copy:
+      - src: top.cmake
+        dest: CMakeLists.txt
+      - src: .clang-format
 </code></pre>
 
 <p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>,
-(using <code>develop</code> branch), <code>foo.txt</code> will be copied from <code>proj1/foo/foo.txt</code> to
-<code>&lt;workspace&gt;/top.txt</code>. Note that <code>copy</code> only works with files, not directories.</p>
+(using <code>next</code> branch). Then <code>proj1/bar</code> has been cloned in <code>&lt;workspace&gt;/bar</code>
+and reset to <code>ad2b68539c78e749a372414165acdf2a1bb68203</code>. Finally <code>proj1/app</code>
+has been cloned in <code>&lt;workspace&gt;/app</code> at on the tag <code>v0.1</code>, <code>top.cmake</code> will be
+copied from <code>proj1/app/top.cmake</code> to <code>&lt;workspace&gt;/CMakeLists.txt</code> and
+<code>proj1/app/.clang-format</code> to <code>&lt;workspace&gt;/.clang-format</code>.
+Note that <code>copy</code> only works with files, not directories.</p>
 <h2 id="groups">groups<a class="headerlink" href="#groups" title="Permanent link">&para;</a></h2>
 <p>The <code>groups</code> section lists the groups by name. They should contain a <code>repos</code> field
 containing a list of repositories (which should match the sources of the repositories

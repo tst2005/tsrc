@@ -63,10 +63,11 @@ def collect_statuses(workspace):
 
     num_repos = len(repos)
     max_len = max((len(x.src) for x in repos))
-    for i, repo, full_path in workspace.enumerate_repos():
+    for i, repo in enumerate(repos):
+        repo_path = workspace.joinpath(repo.src)
         ui.info_count(i, num_repos,
                       "Checking", repo.src.ljust(max_len + 1), end="\r")
-        status = tsrc.git.get_status(full_path)
+        status = tsrc.git.get_status(repo_path)
         result.append((repo.src, status))
 
     terminal_size = shutil.get_terminal_size()

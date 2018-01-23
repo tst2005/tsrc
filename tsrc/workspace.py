@@ -221,12 +221,6 @@ class Workspace():
         file_copier = FileCopier(self)
         tsrc.executor.run_sequence(self.local_manifest.copyfiles, file_copier)
 
-    def enumerate_repos(self):
-        """ Yield (index, repo, full_path) for all the repos """
-        for i, repo in enumerate(self.get_repos()):
-            full_path = self.joinpath(repo.src)
-            yield (i, repo, full_path)
-
     def get_url(self, src):
         """ Return the url of the project in `src` """
         return self.local_manifest.get_url(src)

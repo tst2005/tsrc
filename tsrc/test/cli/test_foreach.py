@@ -72,3 +72,13 @@ def test_foreach_shell(tsrc_cli, git_server, message_recorder):
     cmd.append("doc")
     tsrc_cli.run("foreach", "-c", " ".join(cmd))
     assert message_recorder.find("`%s`" % " ".join(cmd))
+
+
+def test_foreach_groups(tsrc_cli, git_server):
+    git_server.add_group("foo", ["bar", "baz"])
+    git_server.add_repo("other")
+    git_server.push_file("bar", "foo.txt")
+    git_server.push_file("baz", "foo.txt")
+    tsrc_cli.run("init", git_server.manifest_url)
+
+    tsrc_cli.run("foreach", "--group", "foo", "ls", "foo.txt")

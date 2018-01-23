@@ -74,7 +74,7 @@ def test_foreach_shell(tsrc_cli, git_server, message_recorder):
     assert message_recorder.find("`%s`" % " ".join(cmd))
 
 
-def test_foreach_groups(tsrc_cli, git_server):
+def test_foreach_on_a_group(tsrc_cli, git_server):
     git_server.add_group("foo", ["bar", "baz"])
     git_server.add_repo("other")
     git_server.push_file("bar", "foo.txt")

@@ -1,0 +1,2 @@
+Get rid of workspace.get_repos() and find a way for clone_missing(), set_remotes() and copy_files() to
+accept a list of repos as argument ?

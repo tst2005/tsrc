@@ -157,13 +157,13 @@
               
                 <h1 id="configuration_files_formats">Configuration files formats<a class="headerlink" href="#configuration_files_formats" title="Permanent link">&para;</a></h1>
 <p>Unless otherwise noted, all configuration files use <a href="http://www.yaml.org/">YAML</a>
-syntax</p>
+syntax.</p>
 <h2 id="manifest_format">Manifest format<a class="headerlink" href="#manifest_format" title="Permanent link">&para;</a></h2>
-<p>The manifest is always parsed as a dictionary .</p>
+<p>The manifest is always parsed as a dictionary.</p>
 <h3 id="top_fields">Top fields<a class="headerlink" href="#top_fields" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><code>repos</code> (required): list of repos to clone</p>
+<p><code>repos</code> (required): list of repositories to clone</p>
 </li>
 <li>
 <p><code>gitlab.url</code> (optional): HTTP URL of the GitLab instance</p>
@@ -191,8 +191,8 @@ syntax</p>
     to the given sha1, else a warning message will be printed.</li>
 </ul>
 </li>
-<li><code>copy</code>: (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</li>
-</ul>
+<li>
+<p><code>copy</code> (optional): A list of dictionaries with <code>src</code> and <code>dest</code> keys, like so:</p>
 <pre><code>repos:
   - src: foo
     url: gitlab:proj1/foo
@@ -211,18 +211,23 @@ syntax</p>
         dest: CMakeLists.txt
       - src: .clang-format
 </code></pre>
-
-<p>In this case, after <code>proj1/foo</code> has been cloned in <code>&lt;workspace&gt;/foo</code>,
-(using <code>next</code> branch). Then <code>proj1/bar</code> has been cloned in <code>&lt;workspace&gt;/bar</code>
-and reset to <code>ad2b68539c78e749a372414165acdf2a1bb68203</code>. Finally <code>proj1/app</code>
-has been cloned in <code>&lt;workspace&gt;/app</code> at on the tag <code>v0.1</code>, <code>top.cmake</code> will be
-copied from <code>proj1/app/top.cmake</code> to <code>&lt;workspace&gt;/CMakeLists.txt</code> and
-<code>proj1/app/.clang-format</code> to <code>&lt;workspace&gt;/.clang-format</code>.
-Note that <code>copy</code> only works with files, not directories.</p>
+<p>In this example:</p>
+<ul>
+<li>First, <code>proj1/foo</code> will be cloned into <code>&lt;workspace&gt;/foo</code> using the <code>next</code> branch.</li>
+<li>Then, <code>proj1/bar</code> will be cloned into <code>&lt;workspace&gt;/bar</code> using the <code>master</code> branch, and reset to <code>ad2b68539c78e749a372414165acdf2a1bb68203</code>.</li>
+<li>Finally:<ul>
+<li><code>proj1/app</code> will be cloned into <code>&lt;workspace&gt;/app</code> using the <code>v0.1</code> tag,</li>
+<li><code>top.cmake</code> will be copied from <code>proj1/app/top.cmake</code> to <code>&lt;workspace&gt;/CMakeLists.txt</code>, and</li>
+<li><code>.clang-format</code> will be copied from <code>proj1/app/</code> to <code>&lt;workspace&gt;/</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Note that <code>copy</code> only works with files, not directories.</p>
+</li>
+</ul>
 <h2 id="groups">groups<a class="headerlink" href="#groups" title="Permanent link">&para;</a></h2>
-<p>The <code>groups</code> section lists the groups by name. They should contain a <code>repos</code> field
-containing a list of repositories (which should match the sources of the repositories
-defined in the <code>repos</code>  section.</p>
+<p>The <code>groups</code> section lists the groups by name. Each group should have a <code>repos</code> field
+containing a list of repositories (only repositories defined in the <code>repos</code> section are allowed).</p>
 <p>The groups can optionally include other groups, with a <code>includes</code> field which should be
 a list of existing group names.</p>
 <p>The group named <code>default</code>, if it exists, will be used to know which repositories to clone

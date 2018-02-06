@@ -175,7 +175,7 @@ $ tsrc init MANIFEST_URL
 <dl>
 <dt>--verbose</dt>
 <dd>show verbose messages</dd>
-<dt>-q.--quiet</dt>
+<dt>-q, --quiet</dt>
 <dd>hide everything except errors and warnings</dd>
 <dt>--color [always|never|auto]</dt>
 <dd>control using color for messages (default 'auto', on if stdout is a terminal)</dd>
@@ -189,22 +189,23 @@ $ tsrc init MANIFEST_URL
 <code>manifest.yml</code> file.</p>
 <p>The <code>-g,-group</code> can be used several times to specify which groups
 to use when cloning repositories.</p>
+<p>The <code>-s,--shallow</code> can be used to make shallow clone of all repositories.</p>
 <p>If you want to add or remove a group in your workspace, you can
-re-run <code>tsrc init</code></p>
+re-run <code>tsrc init</code>.</p>
 </dd>
 <dt>tsrc foreach -- command --opt1 arg1</dt>
 <dd>
 <p>Runs <code>command --opt1 arg1</code> in every repository, and report failures
 at the end.</p>
 <p>Note the <code>--</code> token to separate options for <code>command</code> from options for
-<code>tsrc</code></p>
+<code>tsrc</code>.</p>
 </dd>
 <dt>tsrc foreach -c 'command --opt1 arg1'</dt>
-<dd>Ditto, but uses a shell. (<code>/bin/sh</code> on Linux or macOS, <code>cmd.exe</code> on Windows)</dd>
+<dd>Ditto, but uses a shell (<code>/bin/sh</code> on Linux or macOS, <code>cmd.exe</code> on Windows).</dd>
 <dt>tsrc log --from FROM [--to TO]</dt>
 <dd>
 <p>Display a summary of all changes since <code>FROM</code> (should be a tag),
-to <code>TO</code> (defaulting to <code>master</code>)</p>
+to <code>TO</code> (defaulting to <code>master</code>).</p>
 <p>Note that if no changes are found, the repository will not be displayed at
 all.</p>
 </dd>
@@ -212,19 +213,19 @@ all.</p>
 <dd>
 <p>You should run this from a repository with the correct branch checked out.</p>
 <p>(The command will fail if you run this while on the <code>master</code> branch or in
-"detached HEAD" mode)</p>
+"detached HEAD" mode.)</p>
 <p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user.</p>
 <p>The merge request will get created if no other opened merge request with the same
 branch exists. Otherwise, the existing merge request will be updated.</p>
 </dd>
 <dt>tsrc push [--ready|--wip]</dt>
-<dd>Toggle the <em>WIP</em> ("Work In Progress") prefix for the merge request.</dd>
+<dd>Toggle the <code>WIP:</code> ("Work In Progress") prefix for the merge request.</dd>
 <dt>tsrc push --accept</dt>
 <dd>
 <p>Tell GitLab to merge the merge request after the CI has passed.</p>
-<p>Note that the source branch will get automatically removed. (Which should
+<p>Note that the source branch will get automatically removed. (It should
 not matter since all the information about the source branch will
-be found in the merge commit)</p>
+be found in the merge commit.)</p>
 </dd>
 <dt>tsrc status</dt>
 <dd>

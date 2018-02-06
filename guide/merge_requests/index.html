@@ -166,8 +166,7 @@
 <p class="admonition-title">Note</p>
 <p>The full config file format is described in the <a href="../../ref/formats/">reference</a>.</p>
 </div>
-<p>The second step is to tell <code>tsrc</code> about the HTTP url of your GitLab instance.</p>
-<p>This is used to call the <a href="https://docs.gitlab.com/ce/api/">GitLab HTTP API</a> (currently using version <em>4</em>)</p>
+<p>The second step is to tell <code>tsrc</code> about the HTTP url of your GitLab instance, which is needed to call the <a href="https://docs.gitlab.com/ce/api/">GitLab HTTP API</a> (currently using version <em>4</em>).</p>
 <p>This is done in the <em>manifest</em> file:</p>
 <pre><code class="yaml">gitlab:
   url: http://gitlab.local
@@ -177,7 +176,7 @@ repos:
 </code></pre>
 
 <h2 id="creating_and_accepting_merge_requests">Creating and accepting merge requests<a class="headerlink" href="#creating_and_accepting_merge_requests" title="Permanent link">&para;</a></h2>
-<p>Here's how you can create and assign a merge request</p>
+<p>Here's how you can create and assign a merge request:</p>
 <pre><code class="bash"># start working on your branch
 $ tsrc push [--assignee ASSIGNEE]
 </code></pre>

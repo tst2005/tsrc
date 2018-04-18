@@ -407,7 +407,7 @@ if HAS_NICE_FEATURE:
 <p>Importing Python files should never cause side effects. It's OK to initialize global variables, but you should never call functions outside a <code>if __name__ == main() block</code>.</p>
 </li>
 <li>
-<p>Always use fully-qualified imports and names:</p>
+<p>Prefer using fully-qualified imports and names:</p>
 </li>
 </ul>
 <pre><code class="python"># Yes
@@ -419,7 +419,10 @@ from foo import bar
 my_bar = bar.Bar()
 </code></pre>
 
-<p>Both styles have pros and cons, we just need to be consistent here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We allow a few exceptions like <code>from path import Path</code> or importing classes directory in tests. Use your best judgement.</p>
+</div>
 <h1 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h1>
 <ul>
 <li>When you want to make sure a class follows an interface, use <code>abc.ABCMeta</code> instead of raising <code>NotImplementedError</code>. This way you get the error when the class is instantiated instead of when the method is called.</li>
@@ -471,7 +474,7 @@ class Foo:
 <li>If you are manipulating filenames, use the <code>path.py</code>library and suffix the variable by <code>_path</code>. Avoid using <code>os.path</code> or <code>shutil</code> methods when <code>path.py</code> is better.</li>
 </ul>
 <pre><code class="python"># Yes
-work_path = path.Path(&quot;foo/work&quot;)
+work_path = Path(&quot;foo/work&quot;)
 work_path.mkdir_p()
 foo_path = work_path.joinpath(&quot;foo.txt&quot;)
 foo_path.write_text(&quot;this is bar&quot;)
@@ -490,7 +493,7 @@ with open(foo_path, &quot;w&quot;) as fileobj:
 <li>When using external code (from the standard library or a third-party library), you should catch the exceptions and optionally re-raise them.</li>
 </ul>
 <h1 id="output_messages_to_the_user">Output messages to the user<a class="headerlink" href="#output_messages_to_the_user" title="Permanent link">&para;</a></h1>
-<p>Do not use <code>print</code>, use <a href="https://supertanker.github.io/python-cli-ui/usage.html#api">python-cli-ui functions</a> instead. This makes it easier to distinguish between real messages and the throw-away <code>print</code> statements you add for debugging.</p>
+<p>Do not use <code>print</code>, use <a href="https://supertanker.github.io/python-cli-ui#api">python-cli-ui functions</a> instead. This makes it easier to distinguish between real messages and the throw-away <code>print</code> statements you add for debugging.</p>
 <p>Also, using "high-level" methods such as <code>ui.info_1()</code> or <code>ui.warning()</code> will make it easier to have a consistent user interface.</p>
               
             </div>

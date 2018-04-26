@@ -103,13 +103,15 @@
     <a class="current" href="./">Changelog</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#v040">v0.4.0</a></li>
+    <li class="toctree-l2"><a href="#v040_2018-04-26">v0.4.0 (2018-04-26)</a></li>
     
         <ul>
         
+            <li><a class="toctree-l3" href="#highlights">Highlights</a></li>
+        
             <li><a class="toctree-l3" href="#preliminary_github_support">Preliminary GitHub support</a></li>
         
-            <li><a class="toctree-l3" href="#new_tsrc_push_features">New tsrc push features</a></li>
+            <li><a class="toctree-l3" href="#tsrc_push_new_features_and_bug_fixes">tsrc push: new features and bug fixes</a></li>
         
             <li><a class="toctree-l3" href="#improve_fixed_reference_handling">Improve fixed reference handling</a></li>
         
@@ -185,10 +187,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="v040">v0.4.0<a class="headerlink" href="#v040" title="Permanent link">&para;</a></h1>
+                <h1 id="v040_2018-04-26">v0.4.0 (2018-04-26)<a class="headerlink" href="#v040_2018-04-26" title="Permanent link">&para;</a></h1>
+<h2 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Preliminary GitHub support</li>
+<li><code>tsrc push</code>: new features and bug fixes</li>
+<li>Improved fixed reference handling</li>
+<li>Support for shallow clones</li>
+</ul>
+<p>See below for the details.</p>
 <h2 id="preliminary_github_support">Preliminary GitHub support<a class="headerlink" href="#preliminary_github_support" title="Permanent link">&para;</a></h2>
-<p>No configuration required. Just make sure you are using <code>tsrc</code> from a repository which has a URL starting with
-<code>git@github.com</code>.</p>
+<ul>
+<li>Added support for creating merge requests on GitHub. No configuration required. Just make sure you are using <code>tsrc</code> from a repository which has a URL starting with <code>git@github.com</code>.</li>
+</ul>
 <p><code>tsrc</code> will prompt you once for your login and password and then store an API token.</p>
 <p>Afterwards, you'll be able to use <code>tsrc</code> push to:</p>
 <ul>
@@ -198,11 +209,14 @@
 <li>Merge the pull request (with the <code>--merge</code> option)</li>
 </ul>
 <p>This change has no impact if you were already using <code>GitLab</code>.</p>
-<h2 id="new_tsrc_push_features">New tsrc push features<a class="headerlink" href="#new_tsrc_push_features" title="Permanent link">&para;</a></h2>
+<h2 id="tsrc_push_new_features_and_bug_fixes"><code>tsrc push</code>: new features and bug fixes<a class="headerlink" href="#tsrc_push_new_features_and_bug_fixes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Add <code>--close</code> option. (GitLab only for now)</li>
+<li>Add <code>--close</code> option.</li>
+<li><strong>Breaking change</strong>: <code>-m/--message</code> option is gone, use <code>--title</code> instead. There's a concept of "description" or "message" for pull requests and merge requests, but the value of the option was only used to update the <em>title</em>, so it had to be renamed.</li>
 <li>Do not assume local and remote tracking branch have the same name.</li>
 <li>Allow using <code>tsrc push &lt;local&gt;:&lt;remote&gt;</code> to explicitly specify local and remote branch names.</li>
+<li>Fix bugs when target is not specified on the command line. See <a href="https://github.com/SuperTanker/tsrc/pull/107/commits/5940f96284fe13d9977fafbb05fcc3dad15ac32d">this commit</a> for details.</li>
+<li>Fix missing merge requests in <code>tsrc push</code> (see <a href="https://github.com/SuperTanker/tsrc/issues/80">issue #80</a>). Patch by @maximerety.</li>
 </ul>
 <h2 id="improve_fixed_reference_handling">Improve fixed reference handling<a class="headerlink" href="#improve_fixed_reference_handling" title="Permanent link">&para;</a></h2>
 <p><strong>Breaking change</strong>: Instead of using <code>fixed_ref</code> in the manifest, you should now use <code>tag</code> or <code>sha1</code>:</p>
@@ -235,7 +249,6 @@
 <li>
 <p>We now use <a href="https://docs.pipenv.org/">pipenv</a> for dependency handling.</p>
 </li>
-<li>Fix missing merge requests in <code>tsrc push</code> (see <a href="https://github.com/SuperTanker/tsrc/issues/80">issue #80</a>). Patch by @maximerety.</li>
 </ul>
 <h1 id="v032_2017-11-02">v0.3.2 (2017-11-02)<a class="headerlink" href="#v032_2017-11-02" title="Permanent link">&para;</a></h1>
 <ul>

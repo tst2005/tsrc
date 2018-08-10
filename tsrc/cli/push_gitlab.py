@@ -83,7 +83,7 @@ class PushAction(tsrc.cli.push.PushAction):
         group_members = self.gl_helper.get_group_members(group_name, query=query)
         # Concatenate and de-duplicate results:
         candidates = project_members + group_members
-        res = list()
+        res = []
         seen = set()  # type: Set[str]
         for user in candidates:
             user_name = user["name"]

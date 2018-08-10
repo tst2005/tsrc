@@ -18,7 +18,7 @@ def describe_branch(git_status: GitStatus) -> List[str]:
         return [ui.green, git_status.branch]
     elif git_status.sha1:
         return [ui.red, git_status.sha1]
-    return list()
+    return []
 
 
 def commit_string(number: int) -> str:
@@ -60,7 +60,7 @@ def describe(git_status: GitStatus) -> List[str]:
 
 
 def collect_statuses(workspace: Workspace) -> List[Tuple[str, GitStatus]]:
-    result = list()  # type: List[Tuple[str, GitStatus]]
+    result = []  # type: List[Tuple[str, GitStatus]]
     repos = workspace.get_repos()
 
     if not repos:

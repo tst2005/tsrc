@@ -26,15 +26,15 @@ class RepoNotFound(tsrc.Error):
 
 class Manifest():
     def __init__(self) -> None:
-        self._repos = list()  # type: List[Repo]
-        self.copyfiles = list()  # type: List[Tuple[str, str]]
+        self._repos = []  # type: List[Repo]
+        self.copyfiles = []  # type: List[Tuple[str, str]]
         self.gitlab = None  # type: Optional[GitLabConfig]
         self.group_list = None  # type:  Optional[GroupList[str]]
 
     def load(self, config: ManifestConfig) -> None:
-        self.copyfiles = list()
+        self.copyfiles = []
         self.gitlab = config.get("gitlab")
-        repos = config.get("repos") or list()
+        repos = config.get("repos") or []
         for repo_config in repos:
             url = repo_config["url"]
             src = repo_config["src"]
@@ -60,12 +60,12 @@ class Manifest():
             self.copyfiles.append((src_copy, dest_copy))
 
     def _handle_groups(self, config: ManifestConfig) -> None:
-        elements = set(repo.src for repo in self._repos)
+        elements = {repo.src for repo in self._repos}
         self.group_list = tsrc.groups.GroupList(elements=elements)
-        groups_config = config.get("groups", dict())
+        groups_config = config.get("groups", {})
         for name, group_config in groups_config.items():
             elements = group_config["repos"]
-            includes = group_config.get("includes", list())
+            includes = group_config.get("includes", [])
             self.group_list.add(name, elements, includes=includes)
 
     def get_repos(self, groups: Optional[List[str]] = None, all_: bool = False) -> List[tsrc.Repo]:
@@ -87,7 +87,7 @@ class Manifest():
     def _get_repos_in_groups(self, groups: List[str]) -> List[tsrc.Repo]:
         assert self.group_list
         elements = self.group_list.get_elements(groups=groups)
-        res = list()
+        res = []
         for src in elements:
             res.append(self.get_repo(src))
         return sorted(res, key=operator.attrgetter("src"))

@@ -75,7 +75,7 @@ def test_creating_merge_request_explicit_target_branch(
     tsrc.git.run_git(repo_path, "checkout", "-b", "new-feature")
     tsrc.git.run_git(repo_path, "commit", "--message", "new feature", "--allow-empty")
 
-    gitlab_mock.find_opened_merge_request.return_value = list()
+    gitlab_mock.find_opened_merge_request.return_value = []
     gitlab_mock.create_merge_request.return_value = MR_STUB
 
     push_args.assignee = "john"
@@ -104,7 +104,7 @@ def test_creating_merge_request_uses_default_branch(
     tsrc.git.run_git(repo_path, "checkout", "-b", "new-feature")
     tsrc.git.run_git(repo_path, "commit", "--message", "new feature", "--allow-empty")
 
-    gitlab_mock.find_opened_merge_request.return_value = list()
+    gitlab_mock.find_opened_merge_request.return_value = []
     gitlab_mock.create_merge_request.return_value = MR_STUB
 
     push_args.assignee = "john"

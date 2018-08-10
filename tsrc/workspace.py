@@ -36,7 +36,7 @@ class Options:
     branch = attr.ib(default="master")  # type: str
     tag = attr.ib(default=None)  # type: Optional[str]
     shallow = attr.ib(default=False)  # type: bool
-    groups = attr.ib(default=list())  # type: List[str]
+    groups = attr.ib(default=[])  # type: List[str]
 
 
 def options_from_dict(as_dict: dict) -> Options:
@@ -45,7 +45,7 @@ def options_from_dict(as_dict: dict) -> Options:
     res.branch = as_dict.get("branch", "master")
     res.tag = as_dict.get("tag")
     res.shallow = as_dict.get("shallow", False)
-    res.groups = as_dict.get("groups") or list()
+    res.groups = as_dict.get("groups") or []
     return res
 
 
@@ -127,7 +127,7 @@ class LocalManifest:
         tsrc.git.run_git(self.clone_path, *cmd)
 
     def save_config(self, options: Options) -> None:
-        config = dict()  # type: Dict[str, Any]
+        config = {}  # type: Dict[str, Any]
         config["url"] = options.url
         config["branch"] = options.branch
         if options.tag:
@@ -213,7 +213,7 @@ class Workspace():
         Called at the beginning of `tsrc init` and `tsrc sync`
 
         """
-        to_clone = list()
+        to_clone = []
         for repo in self.get_repos():
             repo_path = self.joinpath(repo.src)
             if not repo_path.exists():
@@ -384,7 +384,7 @@ class BadBranches(tsrc.Error):
 class Syncer(tsrc.executor.Task[tsrc.Repo]):
     def __init__(self, workspace: Workspace) -> None:
         self.workspace = workspace
-        self.bad_branches = list()  # type: List[Tuple[str, str, str]]
+        self.bad_branches = []  # type: List[Tuple[str, str, str]]
 
     def description(self) -> str:
         return "Synchronize workspace"

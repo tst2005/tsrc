@@ -15,7 +15,7 @@ class Group(Generic[T]):
                  includes: Optional[List[str]] = None) -> None:
         self.name = name
         self.elements = elements
-        self.includes = includes or list()
+        self.includes = includes or []
 
 
 class GroupNotFound(GroupError):
@@ -40,7 +40,7 @@ class UnknownElement(GroupError):
 
 class GroupList(Generic[T]):
     def __init__(self, *, elements: Iterable[T]) -> None:
-        self.groups = dict()  # type: Dict[str, Group]
+        self.groups = {}  # type: Dict[str, Group]
         self.all_elements = elements
         self._groups_seen = set()  # type: Set[str]
 

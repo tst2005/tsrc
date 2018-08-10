@@ -42,7 +42,7 @@ class TooManyUsers(GitLabError):
 def handle_errors(response: requests.models.Response) -> None:
     # Make sure we always have a dict containing some
     # kind of error:
-    json_details = dict()  # type: Dict[str, str]
+    json_details = {}  # type: Dict[str, str]
     try:
         json_details = response.json()
     except ValueError:
@@ -81,7 +81,7 @@ class GitLabHelper():
 
     def make_paginated_get_request(self, url: str, *,
                                    params: RequestParams) -> Iterable[Any]:
-        results = list()  # type: List[Any]
+        results = []  # type: List[Any]
         if params:
             params = RequestParams(params.copy())
         next_page = 1  # type: Optional[int]
@@ -128,7 +128,7 @@ class GitLabHelper():
             "state": "opened",
             "per_page": "100"  # Maximum number of items allowed in pagination
         })
-        previous_mrs = list()  # type: List[MergeRequest]
+        previous_mrs = []  # type: List[MergeRequest]
         previous_mrs = cast(List[MergeRequest], self.make_paginated_get_request(url, params=params))
         for mr in previous_mrs:
             if mr["source_branch"] == source_branch:

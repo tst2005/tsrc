@@ -60,12 +60,12 @@ def save_token(token: str) -> None:
     if cfg_path.exists():
         config = tsrc.config.parse_tsrc_config(roundtrip=True)
     else:
-        config = Config(dict())
+        config = Config({})
     if "auth" not in config:
-        config["auth"] = dict()
+        config["auth"] = {}
     auth = config["auth"]
     if "github" not in config:
-        auth["github"] = dict()
+        auth["github"] = {}
     auth["github"]["token"] = token
     tsrc.config.dump_tsrc_config(config)
 

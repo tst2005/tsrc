@@ -13,19 +13,20 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Comand line usage";
     var mkdocs_page_input_path = "ref/cli.md";
-    var mkdocs_page_url = "/ref/cli/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -39,7 +40,7 @@
         <a href="../.." class="icon icon-home"> tsrc documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,7 +64,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../guide/merge_requests/">Handling GitLab merge requests</a>
+    <a class="" href="../../guide/review/">Automating code review</a>
                 </li>
     </ul>
 	    </li>
@@ -214,19 +215,26 @@ all.</p>
 <p>You should run this from a repository with the correct branch checked out.</p>
 <p>(The command will fail if you run this while on the <code>master</code> branch or in
 "detached HEAD" mode.)</p>
-<p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user.</p>
-<p>The merge request will get created if no other opened merge request with the same
-branch exists. Otherwise, the existing merge request will be updated.</p>
+<p><code>ASSIGNEE</code> is optional and should match the name of an active GitLab user, or
+a member of your GitHub team.</p>
+<p>The merge request (or pull request on GitHub) will get created if no other
+opened merge request with the same branch exists. Otherwise, the existing
+merge request will be updated.</p>
 </dd>
-<dt>tsrc push [--ready|--wip]</dt>
+<dt>tsrc push [--ready|--wip] (GitLab only)</dt>
 <dd>Toggle the <code>WIP:</code> ("Work In Progress") prefix for the merge request.</dd>
-<dt>tsrc push --accept</dt>
+<dt>tsrc push --accept (GitLab only)</dt>
 <dd>
 <p>Tell GitLab to merge the merge request after the CI has passed.</p>
 <p>Note that the source branch will get automatically removed. (It should
 not matter since all the information about the source branch will
 be found in the merge commit.)</p>
 </dd>
+<dt>tsrc push --merge (GitHub only):</dt>
+<dd>Tell GitHub to merge the pull request.</dd>
+<dt>tsrc push [--reviewer REVIEWER  ...] (GitHub only):</dt>
+<dd>Request a reviewer from <code>REVIEWER</code>. Can be specified multiple times. Should
+ be a member of your organization.</dd>
 <dt>tsrc status</dt>
 <dd>
 <p>Displays a summary of the status of your workspace:</p>
@@ -250,7 +258,7 @@ be found in the merge commit.)</p>
         <a href="../formats/" class="btn btn-neutral float-right" title="Configuration files formats">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../guide/merge_requests/" class="btn btn-neutral" title="Handling GitLab merge requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../guide/review/" class="btn btn-neutral" title="Automating code review"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -276,7 +284,7 @@ be found in the merge commit.)</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../guide/merge_requests/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../guide/review/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../formats/" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -284,9 +292,8 @@ be found in the merge commit.)</p>
     </span>
 </div>
     <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

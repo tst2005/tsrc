@@ -1,76 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/guide/basics/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/guide/merge_requests/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/ref/cli/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/ref/formats/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/contrib/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/code-manifesto/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/faq/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/changelog/</loc>
-     <lastmod>2018-04-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>

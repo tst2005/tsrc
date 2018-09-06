@@ -11,9 +11,10 @@ from tsrc.git import GitStatus
 from tsrc.workspace import Workspace
 
 
-def describe_branch(git_status: GitStatus) -> List[str]:
+def describe_branch(git_status: GitStatus) -> List[ui.Token]:
     if git_status.tag:
-        return [ui.darkyellow, git_status.tag]
+        res = [ui.darkyellow, git_status.tag]  # type: List[ui.Token]
+        return res
     elif git_status.branch:
         return [ui.green, git_status.branch]
     elif git_status.sha1:
@@ -28,8 +29,8 @@ def commit_string(number: int) -> str:
         return 'commits'
 
 
-def describe_position(git_status: GitStatus) -> List[str]:
-    res = []  # type: List[str]
+def describe_position(git_status: GitStatus) -> List[ui.Token]:
+    res = []  # type: List[ui.Token]
     if git_status.ahead != 0:
         up = ui.Symbol("↑", "+")
         n_commits = commit_string(git_status.ahead)
@@ -43,16 +44,16 @@ def describe_position(git_status: GitStatus) -> List[str]:
     return res
 
 
-def describe_dirty(git_status: GitStatus) -> List[str]:
-    res = []  # type: List[str]
+def describe_dirty(git_status: GitStatus) -> List[ui.Token]:
+    res = []  # type: List[ui.Token]
     if git_status.dirty:
         res += [ui.red, "(dirty)"]
     return res
 
 
-def describe(git_status: GitStatus) -> List[str]:
+def describe(git_status: GitStatus) -> List[ui.Token]:
     # Return a list of tokens suitable for ui.info()
-    res = []  # type: List[str]
+    res = []  # type: List[ui.Token]
     res += describe_branch(git_status)
     res += describe_position(git_status)
     res += describe_dirty(git_status)
@@ -84,7 +85,7 @@ def display_statuses(statuses: List[Tuple[str, GitStatus]]) -> None:
         return
     max_src = max((len(x[0]) for x in statuses))
     for src, status in statuses:
-        message = [ui.green, "*", ui.reset, src.ljust(max_src)]
+        message = [ui.green, "*", ui.reset, src.ljust(max_src)]  # type: List[ui.Token]
         message += describe(status)
         ui.info(*message)
 
